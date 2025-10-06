@@ -1,0 +1,12 @@
+/* media content configuration */
+@media (min-width: 901px){
+    .mosaic-container {
+        display: grid;
+        grid-template-columns: repeat(2, 720px);
+        gap: 24px;
+    }
+
+    .img {
+        width: 100%;
+    }
+}

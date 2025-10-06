@@ -1,0 +1,35 @@
+/* media content configuration */
+@media (min-width: 901px){
+    .mosaic-container {
+        display: grid;
+        grid-template-columns: repeat(3, 480px);
+        gap: 24px;
+    }
+
+    .img {
+        width: 480px;
+    }
+
+    .img-cell-4 {
+        grid-column: span 3;
+        width: auto;
+    }
+
+    /* image positioning */
+    .img-cell-1 > img {
+        object-position: 0% 0%;
+    }
+
+    .img-cell-4 > img {
+        object-position: 0% 0%;
+    }
+}
+
+@media (max-width: 900px){
+    .img-cell-1 > img {
+        object-position: 0% 100%;
+    }
+    .img-cell-4 > img {
+        object-position: 0% 0%;
+    }
+}

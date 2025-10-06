@@ -1,0 +1,257 @@
+/* general configuration */
+body {
+    background-image: url(../assets/capa-clean_no-blur.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    backdrop-filter: blur(4px);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    color: snow;
+    margin: 0;
+    padding: 0;
+}
+
+span {
+    position: relative;
+}
+
+.italic-text {
+    font-style: italic;
+}
+
+/* basal container configuration */
+.main-container {
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    min-height: 100vh;
+}
+
+/* header configuration */
+.flex-header-container {
+    display: flex;
+    width: 100%;
+    min-height: 124px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .35);
+    backdrop-filter: blur(4px);
+}
+
+.title-h1 {
+    font-size: 3rem;
+    margin-left: 12px;
+    padding: 12px;
+}
+
+a.flex-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 12px;
+}
+
+.img {
+    position: relative;
+    align-items: flex-end;
+    width: 720px;
+    height: 720px;
+
+    border: 8px solid rgba(255, 255, 255, .15);
+    border-radius: 25px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.img > img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    /* pointer-events: none; */
+    
+    transition:
+        transform .3s ease-out;
+}
+
+.img > img:hover {
+    transform: scale(1.03);
+}
+
+.cmt {
+    width: 8rem;
+}
+
+.midr {
+    width: 5rem;
+}
+
+/* media content configuration */
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 48px;
+}
+
+.media-container {
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    row-gap: 12px;
+    justify-content: center;
+}
+
+.title-h2 {
+    position: relative;
+    grid-area: 1 / -1;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 64px;
+    padding: 12px;
+    background-color: rgba(0, 0, 0, .35);
+    border-radius: 12px;
+    
+    font-family: "Roboto Mono", monospace;
+    font-weight: 500;
+    font-size: 1.8rem;
+    text-align: center;
+    align-content: center;
+    box-sizing: border-box;
+}
+
+.mosaic-container {
+    display: grid;
+    grid-template-columns: repeat(2, 720px);
+    gap: 24px;
+}
+
+.obs {
+    position: absolute;
+    font-size: 1.3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 48px);
+    bottom: 8px;
+    padding: 8px 12px;
+    
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(4px);
+    
+    border-radius: 10px;
+    pointer-events: none;
+    
+    font-family: "Roboto Mono", monospace;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.25;
+    color: rgb(0, 255, 149);
+}
+
+.invisible {
+    display: none;
+}
+
+/* additional information on hovering */
+.tip {
+    color: rgb(0, 255, 149);
+    background-color: rgba(0, 255, 128, .1);
+    border-radius: 12px;
+    padding: 4px 12px;
+    cursor: help;
+    
+    transition: 
+        background .5s ease;
+}
+
+.tip:hover {
+    background: radial-gradient(rgba(0, 255, 128, .15));
+    background-color: rgba(0, 255, 128, .1);
+}
+
+.tip::before {
+    content: attr(data-tip);
+    min-width: 480px;
+    max-width: 720px;
+    height: min-content;
+    border-radius: 12px;
+    padding: 12px;
+    visibility: hidden;
+
+    position: absolute;
+    bottom: 64px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, .75);
+
+    font-size: 1.2rem;
+    text-align: justify;
+    z-index: 1;
+
+    opacity: 0;
+    transition:
+        opacity .5s ease;
+}
+
+.tip:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 480px){
+    .main-container {
+        justify-content: center;
+        grid-template-columns: 100%;
+    }
+    .flex-header-container {
+        height: 96px;
+        width: 100%;
+    }
+    .cmt {
+        width: 6rem;
+    }
+    .midr {
+        width: 3.5rem;
+    }
+    .content-container {
+        margin: 48px 12px;
+    }
+    .media-container {
+        width: 100%;
+    }
+    .mosaic-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .title-h1 {
+        font-size: 1.3rem;
+        width: max-content;
+    }
+    .img {
+        width: auto;
+        height: 480px;
+    }
+    .title-h2 {        
+        width: 100%;
+        height: auto;
+        font-size: 1.2rem;
+    }
+    .tip {
+        padding: 0px 12px;
+    }
+    .tip::before {
+        min-width: 240px;
+        max-width: 360px;
+        font-size: .8rem;
+    }
+}

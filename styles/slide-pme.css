@@ -1,0 +1,18 @@
+/* media content configuration */
+@media (min-width: 901px){
+    .mosaic-container {
+        display: grid;
+        grid-template-columns: repeat(3, 480px);
+        gap: 24px;
+    }
+    
+    .img {
+        width: 480px;
+    }
+}
+
+@media (max-width: 900px){
+    .img-cell-3 > img {
+        object-position: 0% 75%;
+    }
+}

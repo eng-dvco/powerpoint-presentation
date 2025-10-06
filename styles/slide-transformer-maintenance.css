@@ -1,0 +1,20 @@
+/* media content configuration */
+@media (min-width: 901px){
+    .mosaic-container {
+        display: grid;
+        grid-template-columns: repeat(2, 720px);
+        gap: 24px;
+    }
+
+    /* gallery */
+    .img-cell-3 {
+        grid-area: 1 / 1 / 2 / 3;
+        width: auto;
+    }
+}
+
+
+
+.img-cell-3 > img {
+    object-position: 50% 20%;
+}
