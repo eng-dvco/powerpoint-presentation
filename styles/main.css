@@ -118,7 +118,7 @@ p {
     .central-content {
         grid-template-columns: 1fr;
         grid-template-rows: min-content min-content min-content;
-        margin: 192px 24px 196px 24px;
+        margin: 92px 24px 92px 24px;
     }
 
     .central-content > p.paragraph {
