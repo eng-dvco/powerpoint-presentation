@@ -140,12 +140,15 @@
         flex-direction: column;
         flex-wrap: wrap;
     }
+
     .section {
         min-width: auto;
     }
+
     .title-h1 {
         font-size: 2.5rem;
     }
+
     .item {
         font-size: 1.1rem;
         min-width: auto;
@@ -159,12 +162,15 @@
         flex-direction: column;
         flex-wrap: wrap;
     }
+
     .section {
         min-width: auto;
     }
+
     .title-h1 {
         font-size: 2.5rem;
     }
+
     .item {
         font-size: 1rem;
         min-width: auto;
@@ -178,22 +184,27 @@
         flex-direction: column;
         flex-wrap: wrap;
     }
+
     .section {
         width: 100%;
         height: auto;
         min-width: auto;
         grid-template-columns: 1fr;
     }
+
     .title-h1 {
         font-size: 2rem;
     }
+
     .title-h2 {
         font-size: 1.5rem;
     }
+
      .column {
         display: flex;
         flex-direction: column;
      }
+
     .item {
         width: 100%;
         font-size: 1.1rem;

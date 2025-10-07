@@ -1,8 +1,13 @@
 /* general configuration */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-image: url(../assets/capa-clean_no-blur.png);
     background-repeat: no-repeat;
     background-size: cover;
+
     width: 100%;
     padding: 0;
     margin: 0;
@@ -77,8 +82,7 @@ a.flex-logo-container {
     object-position: center;
     width: 100%;
     height: 100%;
-    pointer-events: none;
-    
+
     transition:
         transform .3s ease-out;
 }
@@ -88,7 +92,7 @@ a.flex-logo-container {
 }
 
 .cmt {
-    width: 8rem;
+    width: 6.5rem;
 }
 
 .midr {
@@ -209,63 +213,86 @@ a.flex-logo-container {
     visibility: visible;
 }
 
+@media (min-width: 816px){
+    .tip::before {
+        position: absolute;
+        width: calc(100vw - 720px);
+        max-width: calc(75vw - 720px);
+        min-width: 200px;
+        left: 50%;
+        top: 115%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 815px){
+    .tip::before {
+        position: absolute;
+        width: calc(100vw - 720px);
+        max-width: calc(75vw - 720px);
+        min-width: 200px;
+        left: 50%;
+        top: 115%;
+        transform: translateX(-50%);
+    }
+}
+
 @media (max-width: 480px){
     .main-container {
         justify-content: center;
         grid-template-columns: 100%;
     }
+
     .flex-header-container {
         height: 96px;
         width: 100%;
     }
+
     .cmt {
-        width: 6rem;
+        width: 4.5rem;
     }
+
     .midr {
         width: 3.5rem;
     }
+
     .media-container {
         width: 100%;
     }
+
     .mosaic-container {
         display: flex;
         flex-direction: column;
         width: 100%;
     }
+
     .title-h1 {
         font-size: 1.3rem;
         width: max-content;
     }
+
     .img {
         width: auto;
         height: 480px;
     }
+
     .title-h2 {        
         width: 100%;
         height: auto;
         font-size: 1.1rem;
     }
+
     .obs {
         font-size: 1rem;
     }
+
     .tip {
         padding: 0px 12px;
     }
+
     .tip:hover::before {
         font-size: 1rem;
         min-width: 360px;
         max-width: 360px;
     }
-}
-
-@media (min-width: 481px) and (max-width: 815px){
-    /* .content-container {
-        min-width: auto;
-    } */
-}
-
-@media (min-width: 816px){
-    /* .mosaic-container {
-        min-width: 480px;
-    } */
 }
