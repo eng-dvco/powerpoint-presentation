@@ -7,11 +7,22 @@ body {
     background-image: url(../assets/capa-clean_no-blur.png);
     background-repeat: no-repeat;
     background-size: cover;
-
-    width: 100%;
     padding: 0;
     margin: 0;
-    backdrop-filter: blur(4px);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: inherit;
+  background-repeat: inherit;
+  background-size: inherit;
+  filter: blur(4px);
+  z-index: -1;
+  pointer-events: none;
+  transform:
+    scale(1.05);
 }
 
 h1,
@@ -185,25 +196,26 @@ a.flex-logo-container {
 
 .tip::before {
     content: attr(data-tip);
-    min-width: 480px;
-    max-width: 720px;
-    height: min-content;
+    position: fixed;
+    left: 50%;
+    bottom: 1.5dvh;
+
+    width: clamp(220px, 90vw, 720px);
+    height: fit-content;
+    box-sizing: border-box;
     border-radius: 12px;
     padding: 12px;
-    visibility: hidden;
-
-    position: fixed;
-    top: 1%;
-    left: 50%;
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
     background-color: rgba(0, 0, 0, .75);
 
     font-size: 1.2rem;
     text-align: justify;
-    z-index: 1;
-
+    z-index: 100;
     pointer-events: none;
+    
     opacity: 0;
+    visibility: hidden;
     transition:
         opacity .5s ease;
 }
@@ -216,21 +228,10 @@ a.flex-logo-container {
 @media (min-width: 816px){
     .tip::before {
         position: absolute;
-        width: calc(100vw - 720px);
-        max-width: calc(75vw - 720px);
-        min-width: 200px;
-        left: 50%;
-        top: 115%;
-        transform: translateX(-50%);
-    }
-}
-
-@media (min-width: 481px) and (max-width: 815px){
-    .tip::before {
-        position: absolute;
-        width: calc(100vw - 720px);
-        max-width: calc(75vw - 720px);
-        min-width: 200px;
+        width: clamp(220px, 50dvw, 320px);
+        height: clamp(220px, 20dvh, 480px);
+        /* max-width: calc(75vw - 720px); */
+        /* min-width: 200px; */
         left: 50%;
         top: 115%;
         transform: translateX(-50%);
@@ -289,10 +290,10 @@ a.flex-logo-container {
     .tip {
         padding: 0px 12px;
     }
-
-    .tip:hover::before {
+    
+    /* .tip:hover::before {
         font-size: 1rem;
         min-width: 360px;
         max-width: 360px;
-    }
+    } */
 }
