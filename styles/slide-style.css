@@ -229,9 +229,7 @@ a.flex-logo-container {
     .tip::before {
         position: absolute;
         width: clamp(220px, 50dvw, 320px);
-        height: clamp(220px, 20dvh, 480px);
-        /* max-width: calc(75vw - 720px); */
-        /* min-width: 200px; */
+        /* height: clamp(220px, 20dvh, 480px); */
         left: 50%;
         top: 115%;
         transform: translateX(-50%);
