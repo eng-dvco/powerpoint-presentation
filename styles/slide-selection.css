@@ -1,6 +1,7 @@
 /* media content configuration */
 .selection-grid {
     display: grid;
+    max-width: 1080px;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 12px;
     row-gap: 24px;
@@ -132,6 +133,44 @@
     pointer-events: none;
 }
 
+@media (min-width: 587px) and (max-width: 1080px){
+    .selection-grid {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .section {
+        min-width: auto;
+    }
+    .title-h1 {
+        font-size: 2.5rem;
+    }
+    .item {
+        font-size: 1.1rem;
+        min-width: auto;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 586px){
+    .selection-grid {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .section {
+        min-width: auto;
+    }
+    .title-h1 {
+        font-size: 2.5rem;
+    }
+    .item {
+        font-size: 1rem;
+        min-width: auto;
+    }
+}
+
 @media (max-width: 480px){
     .selection-grid {
         display: flex;
@@ -144,6 +183,9 @@
         height: auto;
         min-width: auto;
         grid-template-columns: 1fr;
+    }
+    .title-h1 {
+        font-size: 2rem;
     }
     .title-h2 {
         font-size: 1.5rem;
