@@ -22,12 +22,11 @@
     width: 100%;
     min-width: max-content;
     height: 64px;
-    
+
     background-color: rgba(0, 0, 0, .5);
-    font-family: "Roboto Mono", monospace;
     font-weight: 500;
-    font-size: 1.5rem;
-    
+    font-family: "Roboto Mono", monospace;
+
     border-radius: 0;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
@@ -41,19 +40,19 @@
 }
 
 .item {
-    min-width: 300px;
     min-height: 60px;
-    padding: 12px 20px 12px 12px;
+    padding: 12px 12px 12px 12px;
     align-content: center;
     position: relative;
-    
+    overflow: hidden;
+
     background-color: rgba(255, 255, 255, .85);
     background-clip: padding-box;
     backdrop-filter: blur(4px);
     border: 4px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     box-sizing: border-box;
-    
+
     font-size: 1.3rem;
     font-family: "Roboto Mono", monospace;
     font-weight: 500;
@@ -65,7 +64,8 @@
         transform .1s ease;
 }
 
-.item:not(.pending):hover {
+.item:not(.pending):hover,
+.item:not(.pending):focus {
     background-color: rgba(255, 255, 255, 1);
     transform: scale(.98);
 }
@@ -81,7 +81,7 @@
     bottom: 50%;
     right: 0px;
     transform: translateY(50%);
-    
+
     opacity: 0;
     transition:
         opacity .3s ease;
@@ -91,7 +91,8 @@
     color: black;
 }
 
-.item:not(.pending):hover::after {
+.item:not(.pending):hover::after,
+.item:not(.pending):focus::after {
     opacity: 1;
 }
 
@@ -122,6 +123,10 @@
     grid-template-columns: repeat(3, 1fr);
 }
 
+.section-obstacles {
+    grid-area: 3 / 1 / 4 / -1;
+}
+
 .section-miscellaneous {
     grid-column: span 4;
     order: 2;
@@ -134,7 +139,14 @@
     pointer-events: none;
 }
 
-@media (min-width: 587px) and (max-width: 1080px){
+@media (min-width: 816px) and (max-width: 1080px){
+    .selection-grid {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 551px) and (max-width: 815px){
     .selection-grid {
         display: flex;
         width: 100%;
@@ -144,41 +156,14 @@
 
     .section {
         min-width: auto;
-    }
-
-    .title-h1 {
-        font-size: 2rem;
     }
 
     .item {
         font-size: 1.1rem;
-        min-width: auto;
     }
 }
 
-@media (min-width: 481px) and (max-width: 586px){
-    .selection-grid {
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-
-    .section {
-        min-width: auto;
-    }
-
-    .title-h1 {
-        font-size: 2rem;
-    }
-
-    .item {
-        font-size: 1rem;
-        min-width: auto;
-    }
-}
-
-@media (max-width: 480px){
+@media (max-width: 550px){
     .selection-grid {
         display: flex;
         width: 100%;
@@ -193,22 +178,14 @@
         grid-template-columns: 1fr;
     }
 
-    .title-h1 {
-        font-size: 1.6rem;
-    }
-
-    .title-h2 {
-        font-size: 1.1rem;
-        min-width: fit-content;
-    }
-
      .column {
         display: flex;
         flex-direction: column;
      }
 
     .item {
-        min-width: 240px;
-        font-size: 1rem;
+        font-size: .8rem;
+        min-height: 48px;
+        padding: 4px;
     }
 }

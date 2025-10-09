@@ -1,8 +1,6 @@
 /* media content configuration */
-@media (min-width: 816px){
-    .mosaic-container {
-        grid-template-columns: repeat(1, 1fr);
-    }
+.mosaic-container {
+    grid-template-columns: repeat(1, 1fr);
 }
 
 .img-cell-1 > img {
