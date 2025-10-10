@@ -1,6 +1,7 @@
 /* general configuration */
 * {
     box-sizing: border-box;
+    color: white;
 }
 
 html {
@@ -8,7 +9,7 @@ html {
 }
 
 body {
-    background-image: url(../assets/capa-clean_no-blur.png);
+    background-image: url(../assets/hero/hero-clean_blur.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -24,7 +25,6 @@ body::before {
     background-image: inherit;
     background-repeat: inherit;
     background-size: inherit;
-    filter: blur(4px);
     z-index: -1;
     pointer-events: none;
     transform:
@@ -138,7 +138,6 @@ a.flex-logo-container {
     padding: 4px 24px;
     margin: 0;
     
-    cursor: unset;
     list-style: none;
     background-color: rgba(0, 0, 0, .5);
 }
@@ -158,8 +157,8 @@ a.flex-logo-container {
         opacity .3s ease;
 }
 
-.crumb a:active {
-    translate: 1px 1px;
+.crumb:active {
+    translate: .5px .5px;
 }
 
 .crumb a:hover,
@@ -179,6 +178,7 @@ a.flex-logo-container {
 
 .crumb:not(:last-child)::after {
     content: "›";
+    display: inline-block;
     color: rgb(0, 255, 149);
     margin-right: 8px;
     opacity: .75;;
@@ -240,15 +240,16 @@ a.flex-logo-container {
     border-radius: 12px;
     pointer-events: none;
     
-    font-family: "Roboto Mono", monospace;
     font-weight: 500;
-    text-align: center;
+    font-family: "Roboto Mono", monospace;
     line-height: 1.25;
+    text-align: center;
     color: rgb(0, 255, 149);
 }
 
-/* carousel configuration */
+/* general carousel configuration */
 .carousel-container {
+    position: relative;
     max-height: 720px;
     min-height: 480px;
     padding: 12px;
@@ -256,25 +257,67 @@ a.flex-logo-container {
     border: 8px solid rgba(255, 255, 255, .15);
     border-radius: 24px;
     background-clip: padding-box;
-    overflow: hidden;
     background-color: rgba(0, 0, 0, .5);
+    overflow: hidden;
 }
 
-.carousel-slider {
+.carousel-container::after {
+    content: "use a barra de rolagem horizontal para navegar entre as imagens";
+    min-width: max-content;
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    padding: 4px 8px;
+    border-radius: 12px;
+    opacity: 0;
+
+    font-size: .8rem;
+    font-family: "Roboto Mono", monospace;
+    color: white;
+
+    background-color: rgba(0, 0, 0, .25);
+    backdrop-filter: blur(4px);
+
+    transition:
+        opacity 2.5s ease .2s,
+        top .5s ease,
+        color .5s ease 8s,
+        backdrop-filter .5s ease 8s,
+        background-color .5s ease 8s;
+
+    transform:
+        translateX(-50%);
+}
+
+.carousel-container:hover::after {
+    opacity: 1;
+    top: 5%;
+    color: transparent;
+    backdrop-filter: blur(0);
+    background-color: transparent;
+}
+
+.carousel-slider {  /* ul */
     display: flex;
     width: 100%;
     height: 100%;
     gap: 24px;
-
     padding: 0;
     margin: 0;
-    /* border-radius: 12px; */
 
     overflow-x: scroll;
-    /* overflow-y: hidden; */
+    scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
 }
 
+.carousel-item {  /* li */
+    list-style: none;
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+}
+
+/* slide content */
 .slide-container {
     position: relative;
     height: 100%;
@@ -295,16 +338,21 @@ a.flex-logo-container {
     transform: scale(1.03);
 }
 
-.carousel-item {
-    scroll-snap-align: center;
-    list-style: none;
-    flex: 0 0 100%;
+/* postscriptum */
+.postscriptum-container {
+    height: 2rem;
+    border-radius: 8px;
+    padding: 8px;
+    
+    align-content: center;
+    font-style: italic;
+    line-height: 1;
+
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(4px);
 }
 
-/* .carousel-item:nth-child(even) {
-    background-color: red;
-} */
-
+/* facultative section for notes */
 .foot-notes {
     display: flex;
     align-items: center;
@@ -352,14 +400,6 @@ a.flex-logo-container {
 .note-acronym::after {
     content: " → ";
     white-space: pre;
-}
-
-.italic-text {
-    font-style: italic;
-}
-
-.invisible {
-    display: none;
 }
 
 /* additional information on hovering */
@@ -412,6 +452,15 @@ a.flex-logo-container {
     visibility: visible;
 }
 
+.italic-text {
+    font-style: italic;
+    color: rgb(0, 255, 149);
+}
+
+.invisible {
+    display: none;
+}
+
 @media (min-width: 551px) and (max-width: 816px){
     .title-h1 {
         font-size: 1.6rem;
@@ -427,6 +476,10 @@ a.flex-logo-container {
 
     .midr {
         width: 3.3rem;
+    }
+
+    .carousel-container::after {
+        font-size: .6rem;
     }
 
     .tip:hover::before,
@@ -479,6 +532,10 @@ a.flex-logo-container {
 
     .obs {
         font-size: .8rem;
+    }
+
+    .carousel-container::after {
+        display: none;
     }
     
     .tip {
