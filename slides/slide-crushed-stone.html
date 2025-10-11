@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@400..700&family=Fondamento:ital@0;1&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="main-container">
+        <section class="main-container">
             <nav class="flex-header-container">
                 <h1 class="title-h1">Recomposição de Brita da Subestação</h1>
                 <a class="flex-logo-container" href="../slides/selection.html">
@@ -38,33 +38,51 @@
                 </ol>
             </nav>
             <div class="content-container">
-                <div class="media-container">
+                <div class="content-wrapper">
                     <h2 class="title-h2">Recomposição do arruamento da subestação com <span class="tip" data-tip="Brita graduada simples. Resultado da união de britas com diferentes granulometrias para promover o preenchimento dos vazios gerados por britas de mesma granulometria.">BGS</span></h2>
                     <div class="carousel-container">
-                        <ul class="carousel-slider">
-                            <li class="carousel-item slide-1">
-                                <div class="img slide-container">
-                                    <img src="../assets/img/slide-crushed-stone/gravel-1.jpg" alt="recomposição do arruamento da subestação com utilização de brita grauda simples (bgs)">
-                                    <p class="obs annotation-text-1">abastecimento com caminhão basculante</p>
-                                </div>
-                            </li>
-                            <li class="carousel-item slide-2">
-                                <div class="img slide-container">
-                                    <img src="../assets/img/slide-crushed-stone/gravel-3.jpg" alt="recomposição do arruamento da subestação com utilização de brita grauda simples (bgs)">
-                                    <p class="obs annotation-text-2">distribuição da brita</p>
-                                </div>
-                            </li>
-                            <li class="carousel-item slide-3">
-                                <div class="img slide-container">
-                                    <img src="../assets/img/slide-crushed-stone/gravel-2.jpg" alt="recomposição do arruamento da subestação com utilização de brita grauda simples (bgs)">
-                                    <p class="obs annotation-text-3">distribuição da brita</p>
-                                </div>
-                            </li>
-                        </ul>
+                        <div class="carousel-wrapper">
+                            <ul class="slider">
+                                <li class="slide slide-1" id="slide-section-1">
+                                    <div class="image-wrapper">
+                                        <img src="../assets/img/slide-crushed-stone/gravel-1.jpg" alt="recomposição do arruamento da subestação com utilização de brita grauda simples (bgs)">
+                                        <p class="obs obs-1">abastecimento com caminhão basculante</p>
+
+                                        <!-- <button class="button-left"></button>
+                                        <button class="button-right"></button> -->
+                                    </div>
+                                </li>
+                                <li class="slide slide-2" id="slide-section-2">
+                                    <div class="image-wrapper">
+                                        <img src="../assets/img/slide-crushed-stone/gravel-3.jpg" alt="recomposição do arruamento da subestação com utilização de brita grauda simples (bgs)">
+                                        <p class="obs obs-2">distribuição da brita</p>
+
+                                        <!-- <button class="button-left"></button>
+                                        <button class="button-right"></button> -->
+                                    </div>
+                                </li>
+                                <li class="slide slide-3" id="slide-section-3">
+                                    <div class="image-wrapper">
+                                        <img src="../assets/img/slide-crushed-stone/gravel-2.jpg" alt="recomposição do arruamento da subestação com utilização de brita grauda simples (bgs)">
+                                        <p class="obs obs-3">distribuição da brita</p>
+
+                                        <!-- <button class="button-left"></button>
+                                        <button class="button-right"></button> -->
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <nav class="carousel-nav">
+                            <div class="marker-group">
+                                <a class="marker" href=""></a>
+                                <a class="marker" href=""></a>
+                                <a class="marker" href=""></a>
+                            </div>
+                        </nav>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
         <script src="" async defer></script>
     </body>
 </html>
