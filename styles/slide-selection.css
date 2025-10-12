@@ -26,15 +26,20 @@
 }
 
 .legend-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, min-content);
     justify-content: space-around;
+    gap: 12px;
+    padding-inline: 12px;
     list-style: none;
 }
 
 .legend-container li {
+    min-width: 120px;
     padding: 4px 8px;
     border-radius: 8px;
     pointer-events: none;
+    text-align: center;
 }
 
 .legend-container li:nth-child(3) {
@@ -216,7 +221,7 @@
     .section {
         min-width: auto;
     }
-
+    
     .item,
     .opener-item {
         font-size: 1.1rem;
@@ -236,6 +241,11 @@
         height: auto;
         min-width: auto;
         grid-template-columns: 1fr;
+    }
+
+    .legend-container {
+        grid-template-columns: 1fr;
+        justify-items: center;
     }
 
      .column {

@@ -429,16 +429,46 @@ a.flex-logo-container {
 
 /* postscriptum */
 .postscriptum-container {
-    height: 2rem;
-    border-radius: 8px;
-    padding: 8px;
-    
-    align-content: center;
-    font-style: italic;
-    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+}
 
+.postscriptum-wrapper {
+    position: relative;
+    max-width: 720px;
+    margin: 0px 48px;
+    backdrop-filter: blur(24px);
+    border-radius: 36px;
+    border: 1.5px dashed white;
     background-color: rgba(0, 0, 0, .5);
-    backdrop-filter: blur(4px);
+    overflow: hidden;
+}
+
+.postscriptum-wrapper p {
+    padding: 8px 32px 8px 64px;
+    font-weight: 500;
+    font-family: "Roboto Mono", monospace;
+}
+
+.post-alert > .postscriptum-wrapper {
+    background-color: rgba(255, 229, 80, .25);
+    border: 1.5px dashed rgba(255, 229, 80, 1);
+}
+
+.post-alert p {
+    color: rgba(255, 229, 80, 1);
+}
+
+.post-alert p::before {
+    content: "⚠️";
+    position: absolute;
+    left: 1.55%;
+    top: 50%;
+    translate: 0% -60%;
+    font-size: 2rem;
 }
 
 /* facultative section for notes */
