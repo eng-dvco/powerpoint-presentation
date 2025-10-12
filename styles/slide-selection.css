@@ -44,19 +44,19 @@
 
 .legend-container li:nth-child(3) {
     color: rgba(255, 255, 255, 1);
-    border: 1.5px dashed rgba(255, 255, 255, .85);
+    border: 1.5px dashed rgba(255, 255, 255, .75);
     background-color: rgba(255, 255, 255, .25);
 }
 
 .legend-container li:nth-child(2) {
     color: rgba(255, 229, 80, 1);
-    border: 1.5px dashed rgba(255, 229, 80, .85);
+    border: 1.5px dashed rgba(255, 229, 80, .75);
     background-color: rgba(255, 229, 80, .25);
 }
 
 .legend-container li:nth-child(1) {
     color: rgba(255, 80, 80, 1);
-    border: 1.5px dashed rgba(255, 80, 80, .85);
+    border: 1.5px dashed rgba(255, 80, 80, .75);
     background-color: rgba(255, 80, 80, .25)
 }
 
@@ -75,10 +75,10 @@
     position: relative;
     overflow: hidden;
 
-    background-color: rgba(255, 255, 255, .85);
+    background-color: rgba(255, 255, 255, .75);
     background-clip: padding-box;
     backdrop-filter: blur(4px);
-    border: 4px solid rgba(255, 255, 255, 0.1);
+    border: 4px solid rgba(255, 255, 255, .1);
     border-radius: 16px;
     box-sizing: border-box;
 
@@ -87,7 +87,7 @@
     font-weight: 500;
     text-align: center;
     text-decoration: none;
-    color: rgb(32, 32, 32);
+    color: rgba(32, 32, 32, 1);
 
     transition:
         transform .1s ease;
@@ -119,14 +119,18 @@
 
 .item:not(.pending)::after {
     content: "›";
-    width: min-content;
+    width: 5ch;
     height: 60px;
     border-radius: 10%;
     pointer-events: none;
 
+    background-color: rgba(255, 255, 255, 1);
+    mask-image:
+        linear-gradient(90deg, #0000, #000 75%);
+
     position: absolute;
     bottom: 50%;
-    right: 0px;
+    right: 0;
     transform: translateY(50%);
 
     opacity: 0;
@@ -135,6 +139,7 @@
 
     font-weight: 400;
     font-size: 2.5rem;
+    text-align: end;
     color: black;
 }
 
@@ -192,11 +197,11 @@
 }
 
 .partial {
-    background-color: rgba(255, 229, 80, .85);
+    background-color: rgba(255, 229, 80, .75);
 }
 
 .pending {
-    background-color: rgba(255, 80, 80, .85);
+    background-color: rgba(255, 80, 80, .75);
     opacity: 60%;
     color: white;
     pointer-events: none;
