@@ -7,13 +7,6 @@
     row-gap: 24px;
 }
 
-.section {
-    min-width: min-content;
-    background-color: rgba(0, 0, 0, .35);
-    border-radius: 12px;
-    box-sizing: border-box;
-}
-
 .title-h2 {
     display: flex;
     grid-area: 1 / -1;
@@ -30,6 +23,36 @@
     border-radius: 0;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
+}
+
+.legend-container {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.legend-container li {
+    padding: 4px 8px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.legend-container li:nth-child(3) {
+    color: rgba(255, 255, 255, 1);
+    border: 1.5px dashed rgba(255, 255, 255, .85);
+    background-color: rgba(255, 255, 255, .25);
+}
+
+.legend-container li:nth-child(2) {
+    color: rgba(255, 229, 80, 1);
+    border: 1.5px dashed rgba(255, 229, 80, .85);
+    background-color: rgba(255, 229, 80, .25);
+}
+
+.legend-container li:nth-child(1) {
+    color: rgba(255, 80, 80, 1);
+    border: 1.5px dashed rgba(255, 80, 80, .85);
+    background-color: rgba(255, 80, 80, .25)
 }
 
 .column {
@@ -75,7 +98,18 @@
 .opener-item:not(.pending):hover,
 .opener-item:not(.pending):focus  {
     background-color: rgba(255, 255, 255, 1);
-    transform: scale(.98);
+    transform:
+        scale(.98);
+}
+
+.item:is(.partial):hover,
+.item:is(.partial):focus {
+    background-color: rgba(255, 229, 80, 1);
+}
+
+.item:is(.pending):hover,
+.item:is(.pending):focus {
+    background-color: rgba(255, 80, 80, 1);
 }
 
 .item:not(.pending)::after {
@@ -105,6 +139,18 @@
 }
 
 /* sections configuration */
+.section {
+    min-width: min-content;
+    background-color: rgba(0, 0, 0, .35);
+    border-radius: 12px;
+    box-sizing: border-box;
+    backdrop-filter: blur(12px);
+}
+
+.section-legend {
+    grid-area: 1 / 1 / 2 / -1;
+}
+
 .section-substation {
     grid-column: span 3;
     grid-row: span 2;
@@ -140,13 +186,18 @@
     order: 2;
 }
 
+.partial {
+    background-color: rgba(255, 229, 80, .85);
+}
+
 .pending {
-    background-color: #FF5050;
+    background-color: rgba(255, 80, 80, .85);
     opacity: 60%;
     color: white;
     pointer-events: none;
 }
 
+/* media configuration */
 @media (min-width: 816px) and (max-width: 1080px){
     .selection-grid {
         display: flex;

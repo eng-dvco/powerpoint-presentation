@@ -4,17 +4,15 @@
     color: white;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    background-image: url(../assets/hero/hero-clean_blur.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+    /* position: fixed; */
+    width: 100vw;
     height: 100vh;
     padding: 0;
     margin: 0;
+    background-image: url(../assets/hero/hero-clean_blur.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 body::before {
@@ -190,7 +188,7 @@ a.flex-logo-container {
     height: fit-content;
     justify-content: center;
     align-items: flex-start;
-    margin: 96px 48px;
+    margin: 48px;
 }
 
 .content-wrapper {
@@ -263,7 +261,7 @@ a.flex-logo-container {
 }
 
 .carousel-container::after {
-    content: "use a barra de rolagem horizontal para navegar entre as imagens";
+    content: "também é possível navegar entre as imagens com o teclado";
     min-width: max-content;
     position: absolute;
     top: -10%;
@@ -292,7 +290,7 @@ a.flex-logo-container {
 
 .carousel-container:hover::after {
     opacity: 1;
-    top: 5%;
+    top: 10%;
     color: transparent;
     backdrop-filter: blur(0);
     background-color: transparent;
@@ -312,11 +310,12 @@ a.flex-logo-container {
     padding: 0;
     padding-inline: var(--peek);
 
-    
     list-style: none;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-padding-inline: var(--peek);
+    scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 
 .slide {
@@ -339,14 +338,93 @@ a.flex-logo-container {
     width: 100%;
     object-fit: cover;
     object-position: 50% 50%;
-    
-    transition:
-        transform 300ms ease;
 }
 
-.image-wrapper > img:hover,
-.image-wrapper > img:focus {
-    transform: scale(1.03);
+/* buttons */
+.image-wrapper > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    translate: 0% -50%;
+    width: 30px;
+    height: 30px;
+
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .5);
+
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition:
+        background-color 300ms ease;
+}
+
+.image-wrapper > .button-left {
+    left: 20px;
+}
+
+.image-wrapper > .button-left::before {
+    content: "‹";
+}
+
+.image-wrapper > .button-right {
+    right: 20px;
+}
+
+.image-wrapper > .button-right::before {
+    content: "›";
+}
+
+.image-wrapper > a::before {
+    position: absolute;
+    translate: 0% -10%;
+}
+
+.image-wrapper > a:hover,
+.image-wrapper > a:focus {
+    background-color: rgba(0, 0, 0, .75);
+}
+
+/* marker group */
+.carousel-nav {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    translate: -50%;
+    z-index: 1;
+}
+
+.marker-group {
+    display: flex;
+    gap: .5rem;
+    padding: 4px 8px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, .75);
+}
+
+.marker-group > a {
+    width: .5rem;
+    height: .5rem;
+    border-radius: 50%;
+    background-color: white;
+    opacity: .75;
+
+    transition:
+        background-color 100ms ease,
+        opacity 300ms ease;
+}
+
+.marker-group > a:hover,
+.marker-group > a:focus {
+    opacity: 1;
+    background-color: rgb(0, 255, 149);
 }
 
 /* postscriptum */
@@ -418,7 +496,7 @@ a.flex-logo-container {
     color: rgb(0, 255, 149);
     background-color: rgba(0, 255, 128, .1);
     border-radius: 12px;
-    padding: 4px 12px;
+    padding: 0px 12px;
     cursor: help;
     font-style: italic;
     
@@ -488,9 +566,13 @@ a.flex-logo-container {
     .midr {
         width: 3.3rem;
     }
-    
+
     .carousel-container::after {
         font-size: .6rem;
+    }
+
+    .carousel-nav {
+        display: none;
     }
 
     .tip:hover::before,
@@ -526,11 +608,11 @@ a.flex-logo-container {
     .midr {
         width: 3rem;
     }
-    
+
     .crumb a {
         font-size: .7rem;
     }
-    
+
     .content-wrapper {
         width: 100%;
     }
@@ -544,13 +626,21 @@ a.flex-logo-container {
     .obs {
         font-size: .8rem;
     }
-    
+
+    .slider {
+        scrollbar-width: none;
+    }
+
     .carousel-container::after {
         display: none;
     }
-    
+
+    .carousel-nav {
+        display: none;
+    }
+
     .tip {
-        padding: 0px 12px;
+        padding: 0px 8px;
     }
 
     .tip:hover::before,
