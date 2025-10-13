@@ -96,12 +96,11 @@
 }
 
 body {
-    /* position: fixed; */
-    width: 100vw;
-    height: 100vh;
     padding: 0;
     margin: 0;
     background-image: url(../assets/hero/hero-clean_blur.png);
+    background-attachment: fixed;
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
