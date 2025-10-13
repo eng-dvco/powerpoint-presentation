@@ -54,6 +54,38 @@
 
     /* masks */
     --mask-fade: linear-gradient(90deg, #0000, #000 75%);
+
+    /* backgrounds */
+    --background-white: rgba(250, 250, 250, 1.0);
+    --background-white-alpha-75: rgba(250, 250, 250, .75);
+    --background-white-alpha-50: rgba(250, 250, 250, .50);
+    --background-white-alpha-25: rgba(250, 250, 250, .25);
+    --background-white-alpha-10: rgba(250, 250, 250, .10);
+    --background-black: rgba(0, 0, 0, 1.0);
+    --background-black-alpha-75: rgba(0, 0, 0, .75);
+    --background-black-alpha-50: rgba(0, 0, 0, .50);
+    --background-black-alpha-25: rgba(0, 0, 0, .25);
+    --background-black-alpha-10: rgba(0, 0, 0, .10);
+    --background-red: rgba(250, 80, 80, 1.0);
+    --background-red-alpha-75: rgba(250, 80, 80, .75);
+    --background-red-alpha-50: rgba(250, 80, 80, .50);
+    --background-red-alpha-25: rgba(250, 80, 80, .25);
+    --background-red-alpha-10: rgba(250, 80, 80, .10);
+    --background-yellow: rgba(255, 230, 80, 1.0);
+    --background-yellow-alpha-75: rgba(255, 230, 80, .75);
+    --background-yellow-alpha-50: rgba(255, 230, 80, .50);
+    --background-yellow-alpha-25: rgba(255, 230, 80, .25);
+    --background-yellow-alpha-10: rgba(255, 230, 80, .10);
+    --background-green: rgba(0, 255, 150, 1.0);
+    --background-green-alpha-75: rgba(0, 255, 150, .75);
+    --background-green-alpha-50: rgba(0, 255, 150, .50);
+    --background-green-alpha-25: rgba(0, 255, 150, .25);
+    --background-green-alpha-10: rgba(0, 255, 150, .10);
+    --background-purple: rgba(100, 80, 255, 1.0);
+    --background-purple-alpha-75: rgba(100, 80, 255, .75);
+    --background-purple-alpha-50: rgba(100, 80, 255, .50);
+    --background-purple-alpha-25: rgba(100, 80, 255, .25);
+    --background-purple-alpha-10: rgba(100, 80, 255, .10);
 }
 
 * {
@@ -130,7 +162,7 @@ span {
     justify-content: space-between;
     align-items: center;
     
-    background-color: var(--color-black-alpha-75);
+    background-color: var(--background-black-alpha-75);
     backdrop-filter: blur(4px);
 }
 
@@ -196,7 +228,7 @@ a.flex-logo-container {
     margin: 0;
     
     list-style: none;
-    background-color: var(--color-black-alpha-50);
+    background-color: var(--background-black-alpha-50);
 }
 
 .crumb {
@@ -267,7 +299,7 @@ a.flex-logo-container {
     width: 100%;
     min-height: 64px;
     padding: 12px;
-    background-color: var(--color-black-alpha-75);
+    background-color: var(--background-black-alpha-75);
     border-radius: 12px;
 
     font-size: 1.4rem;
@@ -291,7 +323,7 @@ a.flex-logo-container {
     bottom: 8px;
     padding: 8px 12px;
     
-    background: var(--color-black-alpha-75);
+    background: var(--background-black-alpha-50);
     backdrop-filter: blur(4px);
     
     border-radius: 12px;
@@ -313,7 +345,7 @@ a.flex-logo-container {
     width: 100%;
     max-height: var(--h);
     padding-block: 12px;
-    background-color: var(--color-black-alpha-75);
+    background-color: var(--background-black-alpha-50);
     border-radius: 12px;
     overflow: hidden;
 }
@@ -328,7 +360,7 @@ a.flex-logo-container {
     border-radius: 12px;
     opacity: 0;
     font-size: .8rem;
-    background-color: var(--color-black-alpha-50);
+    background-color: var(--background-black-alpha-50);
     backdrop-filter: blur(4px);
 
     transition:
@@ -409,7 +441,7 @@ a.flex-logo-container {
     padding: 0;
     border: 0;
     border-radius: 50%;
-    background-color: var(--color-black-alpha-50);
+    background-color: var(--background-black-alpha-50);
 
     font-size: 1.5rem;
     font-weight: 700;
@@ -442,7 +474,7 @@ a.flex-logo-container {
 
 .image-wrapper > a:hover,
 .image-wrapper > a:focus {
-    background-color: var(--color-black-alpha-75);
+    background-color: var(--background-black-alpha-75);
 }
 
 /* marker group */
@@ -459,14 +491,14 @@ a.flex-logo-container {
     gap: .5rem;
     padding: 4px 8px;
     border-radius: 8px;
-    background-color: var(--color-black-alpha-75);
+    background-color: var(--background-black-alpha-75);
 }
 
 .marker-group > a {
     width: .5rem;
     height: .5rem;
     border-radius: 50%;
-    background-color: var(--color-white-alpha-75);
+    background-color: var(--background-white-alpha-75);
 
     transition:
         background-color 100ms ease,
@@ -476,7 +508,7 @@ a.flex-logo-container {
 .marker-group > a:hover,
 .marker-group > a:focus {
     opacity: 1;
-    background-color: var(--color-green);
+    background-color: var(--background-green);
 }
 
 /* postscriptum */
@@ -495,7 +527,7 @@ a.flex-logo-container {
     backdrop-filter: blur(24px);
     border-radius: 36px;
     border: 1.5px dashed white;
-    background-color: var(--color-black-alpha-50);
+    background-color: var(--background-black-alpha-50);
     overflow: hidden;
 }
 
@@ -505,8 +537,8 @@ a.flex-logo-container {
 }
 
 .post-alert > .postscriptum-wrapper {
-    background-color: var(--color-yellow-alpha-25);
-    border: 1.5px dashed var(--color-yellow);
+    background-color: var(--background-yellow-alpha-25);
+    border: 1.5px dashed var(--background-yellow);
 }
 
 .post-alert p {
@@ -516,7 +548,7 @@ a.flex-logo-container {
 .post-alert p::before {
     content: "⚠️";
     position: absolute;
-    left: 1.55%;
+    left: clamp(2%, 12px, 4%);
     top: 50%;
     translate: 0% -60%;
     font-size: 2rem;
@@ -537,7 +569,7 @@ a.flex-logo-container {
 .notes-container {
     width: 100%;
     max-width: 480px;
-    background-color: var(--color-black-alpha-75);
+    background-color: var(--background-black-alpha-75);
     padding: 12px 24px;
     border-radius: 12px;
 }
@@ -574,11 +606,12 @@ a.flex-logo-container {
 /* additional information on hovering */
 .tip {
     color: var(--color-green);
-    background-color: var(--color-green-alpha-10);
+    background-color: var(--background-green-alpha-10);
     border-radius: 12px;
     padding: 0px 12px;
     cursor: help;
     font-style: italic;
+    font-weight: var(--font-weight-bold);
 
     transition: 
         background .5s ease;
@@ -586,7 +619,7 @@ a.flex-logo-container {
 
 .tip:hover,
 .tip:focus {
-    background: radial-gradient(var(--color-green-alpha-25));
+    background: radial-gradient(var(--background-green-alpha-25));
 }
 
 .tip::before {
@@ -599,17 +632,16 @@ a.flex-logo-container {
     height: fit-content;
     border-radius: 12px;
     padding: 12px;
-    transform:
-        translateX(-50%);
-    background-color: var(--color-black-alpha-75);
+    transform: translateX(-50%);
+    background-color: var(--background-black-alpha-75);
 
     font-size: 1.2rem;
     text-align: justify;
     z-index: 100;
+    visibility: hidden;  /* fix the animation */
     pointer-events: none;
-    
+
     opacity: 0;
-    visibility: hidden;
     transition:
         opacity .5s ease;
 }
@@ -656,7 +688,7 @@ a.flex-logo-container {
 
     .tip:hover::before,
     .tip:focus::before {
-        font-size: .9rem;
+        font-size: .8rem;
     }
 }
 
@@ -722,12 +754,8 @@ a.flex-logo-container {
         display: none;
     }
 
-    .tip {
-        padding: 0px 8px;
-    }
-
     .tip:hover::before,
     .tip:focus::before {
-        font-size: .9rem;
+        font-size: .8rem;
     }
 }
