@@ -105,7 +105,6 @@
 .opener-item {
     padding: 12px 12px 12px 12px;
     align-content: center;
-    position: relative;
     overflow: hidden;
 
     background-color: var(--color-white-alpha-75);
@@ -115,7 +114,7 @@
     border-radius: 16px;
     box-sizing: border-box;
 
-    font-size: 1.3rem;
+    font-size: var(--font-size-item);
     font-weight: 500;
     text-align: center;
     text-decoration: none;
@@ -151,23 +150,19 @@
 }
 
 .item:not(.pending)::after {
-    content: "›";
-    width: 5ch;
-    height: calc(1.3em*1.0);
+    content: "";
     position: absolute;
     top: 50%;
     right: 0;
-    translate: 0% -50%;
+    transform:
+        translateY(-50%);
+    width: 8ch;
+    height: 100%;
 
-    border-radius: 10%;
     pointer-events: none;
     opacity: 0;
     background-color: var(--color-white);
     mask-image: var(--mask-fade);
-
-    font-size: 2.5rem;
-    text-align: end;
-    color: black;
 
     transition:
         opacity .3s ease;
@@ -177,6 +172,32 @@
 .item:not(.pending):focus::after {
     opacity: 1;
 }
+
+/* struggling to centralize */
+/* .item:not(.pending)::before {
+    content: "›";
+    position: absolute;
+    top: 15%;
+    right: 0;
+    transform:
+        translateY(-50%);
+    width: fit-content;
+    height: fit-content;
+
+    pointer-events: none;
+    opacity: 0;
+    font-size: var(--font-size-largest);
+    color: black;
+
+    transition:
+        opacity .3s ease;
+}
+
+.item:not(.pending):hover::before,
+.item:not(.pending):focus::before {
+    opacity: 1;
+    z-index: 1;
+} */
 
 /* sections configuration */
 .section {
