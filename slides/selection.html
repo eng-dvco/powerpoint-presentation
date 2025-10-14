@@ -28,9 +28,9 @@
                     <section class="section section-legend">
                         <h2 class="title-h2">Legenda de status</h2>
                         <ul class="legend-container">
-                            <li>pendente</li>
-                            <li>incompleto</li>
-                            <li>completo</li>
+                            <li data-details="previsto para ser preenchido, porém, ainda sem conteúdo disponível">pendente</li>
+                            <li data-details="preenchimento parcial ou pendente; visualize o elemento para saber mais">incompleto</li>
+                            <li data-details="contempla todas as informações necessárias para a apresentação">completo</li>
                         </ul>
                     </section>
                     <section class="section section-substation">
@@ -40,15 +40,15 @@
                                 Inspeção termográfica</a>
                             <a class="item item-2" href="../slides/slide-pme.html">
                                 Instalação do PMF</a>
-                            <a class="item item-3" href="../slides/slide-rectifier-unit.html">
+                            <a class="item item-3 invisible" href="../slides/slide-rectifier-unit.html">
                                 Limpeza de unidade retificadora</a>
                             <a class="item item-4" href="../slides/slide-gutter-plates.html">
                                 Recomposição de canaletas</a>
-                            <a class="item item-5" href="../slides/slide-gate-repair.html">
+                            <a class="item item-5 invisible" href="../slides/slide-gate-repair.html">
                                 Reparo na porta principal</a>
                             <a class="item item-6" href="../slides/slide-paint-repair.html">
                                 Restauração da pintura</a>
-                            <a class="item item-7" href="../slides/slide-faulty-components.html">
+                            <a class="item item-7 invisible" href="../slides/slide-faulty-components.html">
                                 Substituição de componentes</a>
                             <a class="item item-8" href="../slides/slide-transformer-maintenance.html">
                                 Manutenção corretiva no 6TR1</a>
@@ -56,11 +56,11 @@
                                 Manutenção no piso falso</a>
                             <a class="item item-10" href="../slides/slide-crushed-stone.html">
                                 Recomposição do arruamento</a>
-                            <a class="item item-11" href="../slides/slide-secc.html">
+                            <a class="item item-11 partial" href="../slides/slide-secc.html">
                                 Manutenção civil na seccionadora</a>
                             <a class="item item-12" href="../slides/slide-se-access.html">
                                 Manutenção dos acessos</a>
-                            <a class="item item-13" href="../slides/slide-reflectors.html">
+                            <a class="item item-13 invisible" href="../slides/slide-reflectors.html">
                                 Instalação de refletores</a>
                             <a class="item item-14" href="../slides/slide-relay-configuration.html">
                                 Configuração de relé</a>
@@ -88,6 +88,11 @@
                                 placeholder</a>
                         </div>
                     </section>
+                    <div class="postscriptum-container">
+                        <div class="postscriptum-wrapper post-details">
+                            <p>atividades menos relevantes foram ocultadas temporariamente</p>
+                        </div>
+                    </div>
                     <section class="section section-administration">
                         <h2 class="title-h2">Administrativo</h2>
                         <div class="column column-4">
@@ -127,16 +132,14 @@
                         <h2 class="title-h2">Histórico de reuniões</h2>
                         <div class="year-collection year-2025">
                             <h3 class="title-h3">2025</h3>
-                            <a class="date date-1" href="#">
+                            <a class="date" href="#">
                                 XX-10-2025</a>
-                            <a class="date date-1" href="#">
-                                XX-10-2025</a>
-                            <a class="date date-1" href="#">
-                                XX-10-2025</a>
-                            <a class="date date-1" href="#">
-                                XX-10-2025</a>
-                            <a class="date date-1" href="#">
-                                XX-10-2025</a>
+                            <a class="date disabled" href="#">
+                                31-07-2025</a>
+                            <a class="date disabled" href="#">
+                                17-07-2025</a>
+                            <a class="date disabled" href="#">
+                                27-06-2025</a>
                         </div>
                     </div>
                 </section>
