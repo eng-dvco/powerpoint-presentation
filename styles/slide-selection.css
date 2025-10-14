@@ -44,6 +44,7 @@
     text-align: center;
     font-size: 1rem;
     font-weight: 500;
+    opacity: .75;
 }
 
 .legend-container li:nth-child(n)::before {
@@ -62,6 +63,18 @@
 
     transition:
         opacity 300ms ease;
+}
+
+.legend-container li:nth-child(n):hover,
+.legend-container li:nth-child(n):focus {
+    opacity: 1;
+}
+
+.legend-container li:nth-child(n):hover::before,
+.legend-container li:nth-child(n):focus::before {
+    opacity: 1;
+    visibility: visible;
+    cursor: none;
 }
 
 .legend-container li:nth-child(3) {
@@ -92,13 +105,6 @@
 
 .legend-container li:nth-child(1)::before {
     content: attr(data-details);
-}
-
-.legend-container li:nth-child(n):hover::before,
-.legend-container li:nth-child(n):focus::before {
-    opacity: 1;
-    visibility: visible;
-    cursor: none;
 }
 
 .item,
