@@ -1,25 +1,11 @@
 body {
     background-image: url(../assets/hero/hero-clean_no-blur.png);
-    background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
+    background-repeat: no-repeat;
     background-size: cover;
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    background-image: inherit;
-    background-repeat: inherit;
-    background-size: inherit;
     background-color: rgba(0, 0, 0, .5);
     background-blend-mode: multiply;
-    z-index: -1;
-    pointer-events: none;
-    transform:
-        scale(1.05);
 }
 
 h1,
