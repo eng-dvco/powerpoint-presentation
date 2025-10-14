@@ -1,37 +1,37 @@
 /* general configuration */
 :root {
     /* colors */
-    --color-white: rgba(255, 255, 255, 1.0);
+    --color-white: rgba(255, 255, 255, 1);
     --color-white-alpha-75: rgba(255, 255, 255, .75);
     --color-white-alpha-50: rgba(255, 255, 255, .50);
     --color-white-alpha-25: rgba(255, 255, 255, .25);
     --color-white-alpha-10: rgba(255, 255, 255, .10);
-    --color-grey: rgba(190, 190, 190, 1.0);
+    --color-grey: rgba(190, 190, 190, 1);
     --color-grey-alpha-75: rgba(190, 190, 190, .75);
     --color-grey-alpha-50: rgba(190, 190, 190, .50);
     --color-grey-alpha-25: rgba(190, 190, 190, .25);
     --color-grey-alpha-10: rgba(190, 190, 190, .10);
-    --color-black: rgba(32, 32, 32, 1.0);
+    --color-black: rgba(32, 32, 32, 1);
     --color-black-alpha-75: rgba(32, 32, 32, .75);
     --color-black-alpha-50: rgba(32, 32, 32, .50);
     --color-black-alpha-25: rgba(32, 32, 32, .25);
     --color-black-alpha-10: rgba(32, 32, 32, .10);
-    --color-red: rgba(250, 80, 80, 1.0);
+    --color-red: rgba(250, 80, 80, 1);
     --color-red-alpha-75: rgba(255, 80, 80, .75);
     --color-red-alpha-50: rgba(255, 80, 80, .50);
     --color-red-alpha-25: rgba(255, 80, 80, .25);
     --color-red-alpha-10: rgba(255, 80, 80, .10);
-    --color-yellow: rgba(255, 230, 80, 1.0);
+    --color-yellow: rgba(255, 230, 80, 1);
     --color-yellow-alpha-75: rgba(255, 230, 80, .75);
     --color-yellow-alpha-50: rgba(255, 230, 80, .50);
     --color-yellow-alpha-25: rgba(255, 230, 80, .25);
     --color-yellow-alpha-10: rgba(255, 230, 80, .10);
-    --color-green: rgba(0, 255, 150, 1.0);
+    --color-green: rgba(0, 255, 150, 1);
     --color-green-alpha-75: rgba(0, 255, 150, .75);
     --color-green-alpha-50: rgba(0, 255, 150, .50);
     --color-green-alpha-25: rgba(0, 255, 150, .25);
     --color-green-alpha-10: rgba(0, 255, 150, .10);
-    --color-purple: rgba(100, 80, 255, 1.0);
+    --color-purple: rgba(100, 80, 255, 1);
     --color-purple-alpha-75: rgba(100, 80, 255, .75);
     --color-purple-alpha-50: rgba(100, 80, 255, .50);
     --color-purple-alpha-25: rgba(100, 80, 255, .25);
@@ -47,7 +47,9 @@
     --font-size-larger: 2rem;
     --font-size-large: 1.5rem;
     --font-size-normal: 1rem;
-    --font-size-small: 0.8rem;
+    --font-size-small: .8rem;
+    --font-size-smaller: .6rem;
+    --font-size-smallest: .4rem;
     --font-weight-bold: 600;
     --font-weight-normal: 400;
     --font-weight-thin: 200;
@@ -56,32 +58,32 @@
     --mask-fade: linear-gradient(90deg, #0000, #000 75%);
 
     /* backgrounds */
-    --background-white: rgba(250, 250, 250, 1.0);
+    --background-white: rgba(250, 250, 250, 1);
     --background-white-alpha-75: rgba(250, 250, 250, .75);
     --background-white-alpha-50: rgba(250, 250, 250, .50);
     --background-white-alpha-25: rgba(250, 250, 250, .25);
     --background-white-alpha-10: rgba(250, 250, 250, .10);
-    --background-black: rgba(0, 0, 0, 1.0);
+    --background-black: rgba(32, 32, 32, 1);
     --background-black-alpha-75: rgba(0, 0, 0, .75);
     --background-black-alpha-50: rgba(0, 0, 0, .50);
     --background-black-alpha-25: rgba(0, 0, 0, .25);
     --background-black-alpha-10: rgba(0, 0, 0, .10);
-    --background-red: rgba(250, 80, 80, 1.0);
+    --background-red: rgba(250, 80, 80, 1);
     --background-red-alpha-75: rgba(250, 80, 80, .75);
     --background-red-alpha-50: rgba(250, 80, 80, .50);
     --background-red-alpha-25: rgba(250, 80, 80, .25);
     --background-red-alpha-10: rgba(250, 80, 80, .10);
-    --background-yellow: rgba(255, 230, 80, 1.0);
+    --background-yellow: rgba(255, 230, 80, 1);
     --background-yellow-alpha-75: rgba(255, 230, 80, .75);
     --background-yellow-alpha-50: rgba(255, 230, 80, .50);
     --background-yellow-alpha-25: rgba(255, 230, 80, .25);
     --background-yellow-alpha-10: rgba(255, 230, 80, .10);
-    --background-green: rgba(0, 255, 150, 1.0);
+    --background-green: rgba(0, 255, 150, 1);
     --background-green-alpha-75: rgba(0, 255, 150, .75);
     --background-green-alpha-50: rgba(0, 255, 150, .50);
     --background-green-alpha-25: rgba(0, 255, 150, .25);
     --background-green-alpha-10: rgba(0, 255, 150, .10);
-    --background-purple: rgba(100, 80, 255, 1.0);
+    --background-purple: rgba(100, 80, 255, 1);
     --background-purple-alpha-75: rgba(100, 80, 255, .75);
     --background-purple-alpha-50: rgba(100, 80, 255, .50);
     --background-purple-alpha-25: rgba(100, 80, 255, .25);
@@ -89,6 +91,7 @@
 }
 
 * {
+    position: relative;
     box-sizing: border-box;
     color: var(--color-white);
     font-family: var(--font-family-general);
@@ -103,21 +106,9 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: var(--background-black-alpha-25);
+    background-blend-mode: multiply;
 }
-
-/* body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    background-image: inherit;
-    background-repeat: inherit;
-    background-size: inherit;
-    z-index: -1;
-    pointer-events: none;
-    transform:
-        scale(1.05);
-} */
 
 h1,
 h2,
@@ -239,8 +230,8 @@ a.flex-logo-container {
     font-style: italic;
     text-decoration: none;
     color: var(--color-green);
-
     opacity: .75;
+
     transition:
         opacity .3s ease;
 }
@@ -533,36 +524,50 @@ a.flex-logo-container {
 }
 
 .postscriptum-wrapper p {
-    padding: 8px 32px 8px 64px;
+    padding: 8px 16px 8px 42px;
     font-weight: 500;
 }
 
 .post-alert {
-    background-color: var(--background-yellow-alpha-25);
+    background-color: var(--background-yellow-alpha-10);
     border: 1.5px dashed var(--background-yellow);
 }
 
 .post-alert p::before {
     content: "🟡";
     position: absolute;
-    left: clamp(2%, 12px, 4%);
+    left: clamp(2%, 10px, 4%);
     top: 50%;
     translate: 0% -50%;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .post-details {
-    background-color: var(--background-green-alpha-25);
+    background-color: var(--background-green-alpha-10);
     border: 1.5px dashed var(--background-green);
 }
 
 .post-details p::before {
     content: "🟢";
     position: absolute;
-    left: clamp(2%, 12px, 4%);
+    left: clamp(2%, 10px, 4%);
     top: 50%;
     translate: 0% -50%;
-    font-size: 2rem;
+    font-size: 1rem;
+}
+
+.post-critical {
+    background-color: var(--background-red-alpha-10);
+    border: 1.5px dashed var(--background-red);
+}
+
+.post-critical p::before {
+    content: "🔴";
+    position: absolute;
+    left: clamp(2%, 10px, 4%);
+    top: 50%;
+    translate: 0% -50%;
+    font-size: 1rem;
 }
 
 /* facultative section for notes */
@@ -573,8 +578,6 @@ a.flex-logo-container {
 
     height: fit-content;
     margin: 0px 48px 48px 48px;
-
-    /* color: white; */
 }
 
 .notes-container {
@@ -625,7 +628,7 @@ a.flex-logo-container {
     font-weight: var(--font-weight-bold);
 
     transition: 
-        background .5s ease;
+        background 500ms ease;
 }
 
 .tip:hover,
@@ -644,17 +647,17 @@ a.flex-logo-container {
     border-radius: 12px;
     padding: 12px;
     transform: translateX(-50%);
-    background-color: var(--background-black-alpha-75);
+    background-color: var(--background-black);
 
     font-size: 1.2rem;
     text-align: justify;
-    z-index: 100;
-    visibility: hidden;  /* fix the animation */
+    visibility: hidden;
     pointer-events: none;
-
     opacity: 0;
+    z-index: 100;
+
     transition:
-        opacity .5s ease;
+        opacity 500ms ease;
 }
 
 .tip:hover::before,
@@ -670,6 +673,11 @@ a.flex-logo-container {
 
 .invisible {
     display: none;
+}
+
+.disabled {
+    color: var(--background-white-alpha-50);
+    pointer-events: none;
 }
 
 @media (min-width: 551px) and (max-width: 816px){
@@ -696,7 +704,7 @@ a.flex-logo-container {
     .carousel-nav {
         display: none;
     }
-
+    
     .tip:hover::before,
     .tip:focus::before {
         font-size: .8rem;
@@ -764,7 +772,7 @@ a.flex-logo-container {
     .carousel-nav {
         display: none;
     }
-
+    
     .tip:hover::before,
     .tip:focus::before {
         font-size: .8rem;
