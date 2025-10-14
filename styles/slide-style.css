@@ -105,7 +105,7 @@ body {
     background-size: cover;
 }
 
-body::before {
+/* body::before {
     content: "";
     position: fixed;
     inset: 0;
@@ -117,7 +117,7 @@ body::before {
     pointer-events: none;
     transform:
         scale(1.05);
-}
+} */
 
 h1,
 h2,
@@ -298,7 +298,7 @@ a.flex-logo-container {
     width: 100%;
     min-height: 64px;
     padding: 12px;
-    background-color: var(--background-black-alpha-75);
+    background-color: var(--background-black-alpha-50);
     border-radius: 12px;
 
     font-size: 1.4rem;
@@ -331,7 +331,7 @@ a.flex-logo-container {
     font-weight: 500;
     line-height: 1.25;
     text-align: center;
-    color: var(--color-green);
+    color: var(--color-white);
 }
 
 /* general carousel configuration */
@@ -513,6 +513,8 @@ a.flex-logo-container {
 /* postscriptum */
 .postscriptum-container {
     display: flex;
+    flex-direction: column;
+    gap: 12px;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -535,21 +537,31 @@ a.flex-logo-container {
     font-weight: 500;
 }
 
-.post-alert > .postscriptum-wrapper {
+.post-alert {
     background-color: var(--background-yellow-alpha-25);
     border: 1.5px dashed var(--background-yellow);
 }
 
-.post-alert p {
-    color: var(--color-yellow);
-}
-
 .post-alert p::before {
-    content: "⚠️";
+    content: "🟡";
     position: absolute;
     left: clamp(2%, 12px, 4%);
     top: 50%;
-    translate: 0% -60%;
+    translate: 0% -50%;
+    font-size: 2rem;
+}
+
+.post-details {
+    background-color: var(--background-green-alpha-25);
+    border: 1.5px dashed var(--background-green);
+}
+
+.post-details p::before {
+    content: "🟢";
+    position: absolute;
+    left: clamp(2%, 12px, 4%);
+    top: 50%;
+    translate: 0% -50%;
     font-size: 2rem;
 }
 

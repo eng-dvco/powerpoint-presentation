@@ -1,5 +1,13 @@
 * {
     color: var(--color-white);
+    box-sizing: border-box;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
 }
 
 /* media content configuration */
@@ -40,6 +48,7 @@
     border-radius: 8px;
     pointer-events: none;
     text-align: center;
+    font-weight: 500;
 }
 
 .legend-container li:nth-child(3) {
@@ -58,13 +67,6 @@
     color: var(--color-red);
     border: 1.5px dashed var(--color-red-alpha-75);
     background-color: var(--color-red-alpha-25);
-}
-
-.column {
-    display: grid;
-    grid-template-columns: 100%;
-    gap: 12px;
-    padding: 12px;
 }
 
 .item,
@@ -147,10 +149,18 @@
 /* sections configuration */
 .section {
     min-width: min-content;
-    background-color: var(--color-black-alpha-50);
+    max-width: 1080px;
     border-radius: 12px;
-    box-sizing: border-box;
+    background-color: var(--color-black-alpha-50);
     backdrop-filter: blur(6px);
+    overflow: hidden;
+}
+
+.column {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 12px;
+    padding: 12px;
 }
 
 .section-legend {
@@ -162,7 +172,7 @@
     grid-row: span 2;
 }
 
-.section-substation > .column-1 {
+.section-substation .column-1 {
     grid-template-columns: repeat(2, 1fr);
 }
 
@@ -176,10 +186,9 @@
 
 .section-administration {
     grid-column: span 4;
-    order: 1;
 }
 
-.section-administration > .column-4 {
+.section-administration .column-4 {
     grid-template-columns: repeat(3, 1fr);
 }
 
@@ -189,16 +198,69 @@
 
 .section-miscellaneous {
     grid-column: span 4;
-    order: 2;
 }
 
+.additional-group {
+    display: flex;
+    width: clamp(240px, 75vw, 480px);
+    max-width: 1080px;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    border-radius: 12px;
+    background-color: var(--color-black-alpha-50);
+    overflow: hidden;
+}
+
+.date-wrapper {
+    --peek: 12px;
+
+    position: relative;
+    width: 100%;
+    height: fit-content;
+}
+
+.year-collection {
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    border-radius: 4px;
+    padding: var(--peek);
+    gap: 12px;
+    overflow-x: scroll;
+    scroll-snap-type: inline proximity;
+    scroll-padding-inline: var(--peek);
+    scrollbar-width: thin;
+}
+
+.year-collection .date {
+    min-width: max-content;
+    padding: 4px 8px;
+    border-radius: 8px;
+    background-color: var(--color-white-alpha-25);
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    scroll-snap-align: start;
+
+    transition:
+        background-color 300ms ease;
+}
+
+.year-collection .date:hover {
+    background-color: var(--color-white-alpha-50);
+}
+
+/* status */
 .partial {
     background-color: var(--color-yellow-alpha-75);
+    border: 4px solid var(--color-yellow-alpha-25);
 }
 
 .pending {
     background-color: var(--color-red-alpha-25);
-    border: 4px solid var(--color-red-alpha-25);
+    border: 4px solid var(--color-red-alpha-10);
     color: var(--color-red-alpha-75);
     pointer-events: none;
 }
@@ -225,6 +287,10 @@
     
     .item,
     .opener-item {
+        font-size: 1.1rem;
+    }
+
+    .year-collection .date {
         font-size: 1.1rem;
     }
 }
@@ -258,6 +324,11 @@
     .opener-item {
         font-size: .8rem;
         min-height: 48px;
+        padding: 4px;
+    }
+
+    .year-collection .date {
+        font-size: .8rem;
         padding: 4px;
     }
 }
