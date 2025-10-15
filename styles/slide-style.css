@@ -1,11 +1,11 @@
 /* general configuration */
 :root {
     /* colors */
-    --color-white: rgba(255, 255, 255, 1);
-    --color-white-alpha-75: rgba(255, 255, 255, .75);
-    --color-white-alpha-50: rgba(255, 255, 255, .50);
-    --color-white-alpha-25: rgba(255, 255, 255, .25);
-    --color-white-alpha-10: rgba(255, 255, 255, .10);
+    --color-white: rgba(225, 225, 225, 1);
+    --color-white-alpha-75: rgba(225, 225, 225, .75);
+    --color-white-alpha-50: rgba(225, 225, 225, .50);
+    --color-white-alpha-25: rgba(225, 225, 225, .25);
+    --color-white-alpha-10: rgba(225, 225, 225, .10);
     --color-grey: rgba(190, 190, 190, 1);
     --color-grey-alpha-75: rgba(190, 190, 190, .75);
     --color-grey-alpha-50: rgba(190, 190, 190, .50);
@@ -43,17 +43,25 @@
     --font-line-content: 1.50;
     --font-line-normal: 1.25;
     --font-line-ui: 1;
-    --font-size-largest: 2rem;
-    --font-size-larger: 1.75rem;
+    --font-size-largest: 2.5rem;
+    --font-size-larger: 2.0rem;
     --font-size-large: 1.5rem;
     --font-size-item: 1.25rem;
     --font-size-normal: 1rem;
     --font-size-small: .8rem;
     --font-size-smaller: .6rem;
     --font-size-smallest: .4rem;
+    --font-weight-bolder: 800;
     --font-weight-bold: 600;
     --font-weight-normal: 400;
     --font-weight-thin: 200;
+
+    /* border radius */
+    --border-round: 50%;
+    --border-big: 3rem;
+    --border-item: .75rem;
+    --border-general: .5rem;
+    --border-smaller: .25rem;
 
     /* masks */
     --mask-fade: linear-gradient(90deg, #0000, #000 75%);
@@ -64,6 +72,11 @@
     --background-white-alpha-50: rgba(250, 250, 250, .50);
     --background-white-alpha-25: rgba(250, 250, 250, .25);
     --background-white-alpha-10: rgba(250, 250, 250, .10);
+    --background-grey: rgba(64, 64, 64, 1);
+    --background-grey-alpha-75: rgba(64, 64, 64, .75);
+    --background-grey-alpha-50: rgba(64, 64, 64, .50);
+    --background-grey-alpha-25: rgba(64, 64, 64, .25);
+    --background-grey-alpha-10: rgba(64, 64, 64, .10);
     --background-black: rgba(32, 32, 32, 1);
     --background-black-alpha-75: rgba(0, 0, 0, .75);
     --background-black-alpha-50: rgba(0, 0, 0, .50);
@@ -118,7 +131,6 @@ h3,
 h4,
 h5,
 h6 {
-    color: var(--color-white);
     margin: 0;
     padding: 0;
     font-weight: var(--font-weight-bold);
@@ -136,6 +148,11 @@ ul {
 
 span {
     position: relative;
+}
+
+hr {
+    color: var(--color-white-alpha-25);
+    margin-inline: 12px;
 }
 
 /* basal container configuration */
@@ -160,8 +177,41 @@ span {
 
 .title-h1 {
     font-size: var(--font-size-largest);
-    margin-left: 12px;
-    padding: 12px;
+}
+
+.title-h2 {
+    font-size: var(--font-size-larger);
+}
+
+.title-h3 {
+    font-size: var(--font-size-large);
+}
+
+.title-header-h1 {
+    width: 100%;
+    min-height: 96px;
+    margin-left: 24px;
+    padding-inline: 12px;
+    text-align: left;
+    align-content: center;
+}
+
+.title-header-h2 {
+    width: 100%;
+    min-height: 64px;
+    padding-inline: 12px;
+    text-align: center;
+    align-content: center;
+    background-color: var(--background-black-alpha-50);
+}
+
+.title-header-h3 {
+    width: 100%;
+    min-height: 48px;
+    padding-inline: 12px;
+    text-align: center;
+    align-content: center;
+    background: var(--background-black-alpha-50);
 }
 
 a.flex-logo-container {
@@ -172,13 +222,12 @@ a.flex-logo-container {
 }
 
 .img {
-    position: relative;
     align-items: flex-end;
     width: 100%;
     height: 360px;
 
     border: 4px solid rgba(255, 255, 255, .15);
-    border-radius: 12px;
+    border-radius: var(--border-item);
     overflow: hidden;
 }
 
@@ -283,20 +332,9 @@ a.flex-logo-container {
     justify-items: center;
 }
 
-.title-h2 {
-    position: relative;
-    grid-area: 1 / -1;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: 64px;
+.content-wrapper > .title-header-h2 {
+    border-radius: var(--border-general);
     padding: 12px;
-    background-color: var(--background-black-alpha-50);
-    border-radius: 12px;
-
-    font-size: var(--font-size-larger);
-    text-align: center;
-    align-content: center;
 }
 
 .mosaic-container {
@@ -318,11 +356,10 @@ a.flex-logo-container {
     background: var(--background-black-alpha-50);
     backdrop-filter: blur(4px);
     
-    border-radius: 12px;
+    border-radius: var(--border-general);
     pointer-events: none;
     
-    font-weight: 500;
-    line-height: 1.25;
+    font-weight: var(--font-weight-bold);
     text-align: center;
     color: var(--color-white);
 }
@@ -338,7 +375,7 @@ a.flex-logo-container {
     max-height: var(--h);
     padding-block: 12px;
     background-color: var(--background-black-alpha-50);
-    border-radius: 12px;
+    border-radius: var(--border-general);
     overflow: hidden;
 }
 
@@ -349,7 +386,7 @@ a.flex-logo-container {
     top: -10%;
     left: 50%;
     padding: 4px 8px;
-    border-radius: 12px;
+    border-radius: var(--border-general);
     opacity: 0;
     font-size: var(--font-size-small);
     background-color: var(--background-black-alpha-50);
@@ -393,6 +430,7 @@ a.flex-logo-container {
     scroll-snap-type: x mandatory;
     scroll-padding-inline: var(--peek);
     scroll-behavior: smooth;
+    scroll-snap-stop: always;
     scrollbar-width: none;
 }
 
@@ -406,7 +444,7 @@ a.flex-logo-container {
     position: relative;
     width: 100%;
     height: 100%;
-    border-radius: 12px;
+    border-radius: var(--border-item);
     border: 4px solid rgba(255, 255, 255, .15);
     overflow: hidden;
 }
@@ -432,7 +470,7 @@ a.flex-logo-container {
     margin: 0;
     padding: 0;
     border: 0;
-    border-radius: 50%;
+    border-radius: var(--border-round);
     background-color: var(--background-black-alpha-50);
 
     font-size: var(--font-size-large);
@@ -482,14 +520,14 @@ a.flex-logo-container {
     display: flex;
     gap: .5rem;
     padding: 4px 8px;
-    border-radius: 8px;
+    border-radius: var(--border-general);
     background-color: var(--background-black-alpha-75);
 }
 
 .marker-group > a {
     width: .5rem;
     height: .5rem;
-    border-radius: 50%;
+    border-radius: var(--border-round);
     background-color: var(--background-white-alpha-75);
 
     transition:
@@ -507,11 +545,11 @@ a.flex-logo-container {
 .postscriptum-container {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     height: fit-content;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
 }
 
 .postscriptum-wrapper {
@@ -519,7 +557,7 @@ a.flex-logo-container {
     max-width: 720px;
     margin: 0px 48px;
     backdrop-filter: blur(24px);
-    border-radius: 36px;
+    border-radius: var(--border-big);
     border: 1.5px dashed white;
     background-color: var(--background-black-alpha-50);
     overflow: hidden;
@@ -533,6 +571,7 @@ a.flex-logo-container {
 .post-alert {
     background-color: var(--background-yellow-alpha-10);
     border: 1.5px dashed var(--background-yellow);
+    margin-block: 24px;
 }
 
 .post-alert p::before {
@@ -547,6 +586,7 @@ a.flex-logo-container {
 .post-details {
     background-color: var(--background-green-alpha-10);
     border: 1.5px dashed var(--background-green);
+    margin-block: 24px;
 }
 
 .post-details p::before {
@@ -561,6 +601,7 @@ a.flex-logo-container {
 .post-critical {
     background-color: var(--background-red-alpha-10);
     border: 1.5px dashed var(--background-red);
+    margin-block: 24px;
 }
 
 .post-critical p::before {
@@ -587,12 +628,7 @@ a.flex-logo-container {
     max-width: 480px;
     background-color: var(--background-black-alpha-75);
     padding: 12px 24px;
-    border-radius: 12px;
-}
-
-.title-h3 {
-    color: var(--color-green);
-    font-size: var(--font-size-small);
+    border-radius: var(--border-general);
 }
 
 .notes-list {
@@ -623,7 +659,7 @@ a.flex-logo-container {
 .tip {
     color: var(--color-green);
     background-color: var(--background-green-alpha-10);
-    border-radius: 12px;
+    border-radius: var(--border-general);
     padding: 0px 12px;
     cursor: help;
     font-style: italic;
@@ -646,13 +682,14 @@ a.flex-logo-container {
 
     width: clamp(220px, 90vw, 696px);
     height: fit-content;
-    border-radius: 12px;
+    border-radius: var(--border-general);
     padding: 12px;
     transform: translateX(-50%);
     background-color: var(--background-black);
 
     font-size: var(--font-size-normal);
     text-align: justify;
+    box-shadow: 0px 4px 12px .5px var(--color-black);
     visibility: hidden;
     pointer-events: none;
     opacity: 0;
@@ -670,15 +707,17 @@ a.flex-logo-container {
 
 .italic-text {
     font-style: italic;
-    color: rgb(0, 255, 149);
 }
 
 .invisible {
     display: none;
+    visibility: hidden;
+    opacity: 0;
 }
 
 .disabled {
-    color: var(--background-white-alpha-50);
+    color: var(--color-white-alpha-50);
+    background-color: var(--color-grey-alpha-25);
     pointer-events: none;
 }
 
@@ -725,7 +764,7 @@ a.flex-logo-container {
     }
 
     .title-h1 {
-        font-size: var(--font-size-large);
+        font-size: var(--font-size-normal);
     }
 
     .title-h2 {
