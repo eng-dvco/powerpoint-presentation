@@ -1,0 +1,20 @@
+/* media content configuration */
+.mosaic-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(1, 240px);
+}
+
+.img {
+    height: auto;
+    width: auto;
+}
+
+.img-cell-1 {
+    grid-area: 1 / 2 / 3 / 3;
+}
+
+.img-cell-6 {
+    grid-column: span 2;
+    grid-row: span 2;
+    min-height: 100%;
+}
