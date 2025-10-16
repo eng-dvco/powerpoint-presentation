@@ -24,16 +24,16 @@
     grid-template-columns: repeat(3, min-content);
     justify-content: space-around;
     gap: 12px;
-    padding-inline: 12px;
+    padding-inline: var(--padding-around-general);
     list-style: none;
 }
 
 .legend-container li {
     min-width: 120px;
-    padding: 4px 8px;
+    padding: var(--padding-general-small);
     border-radius: var(--border-general);
     text-align: center;
-    font-size: 1rem;
+    font-size: var(--font-size-normal);
     font-weight: 500;
     opacity: .75;
 }
@@ -46,7 +46,7 @@
     bottom: 2.5dvh;
     translate: -50%;
     border-radius: var(--border-big);
-    padding: 12px;
+    padding: var(--padding-around-general);
     background-color: var(--color-black);
     opacity: 0;
     visibility: hidden;
@@ -101,7 +101,7 @@
 
 .item,
 .opener-item {
-    padding: 12px;
+    padding: var(--padding-general-normal);
     align-content: center;
     overflow: hidden;
 
@@ -210,7 +210,7 @@
     display: grid;
     grid-template-columns: 100%;
     gap: 12px;
-    padding: 12px;
+    padding: var(--padding-around-general);
 }
 
 .section-legend {
@@ -266,7 +266,7 @@
     display: grid;
     grid-template: repeat(2, minmax(120px, 240px)) / 1fr 1.75fr;
     gap: 12px;
-    padding: 12px;
+    padding: var(--padding-around-general);
     overflow: hidden;
 }
 
@@ -297,7 +297,7 @@
 
 .collection > span.year-tag {
     border-radius: var(--border-smaller);
-    padding: 4px 8px;
+    padding: var(--padding-general-small);
     background-color: var(--background-green-alpha-10);
     font-weight: var(--font-weight-bold);
     color: var(--color-green-alpha-75);
@@ -305,7 +305,7 @@
 
 .collection a {
     width: 100%;
-    padding: 4px 8px;
+    padding: var(--padding-general-small);
     border-radius: var(--border-smaller);
     font-size: var(--font-size-small);
     line-height: var(--font-line-normal);
@@ -426,12 +426,12 @@
 
     .legend-container li:nth-child(1n):hover::before,
     .legend-container li:nth-child(1n):focus::before {
-        font-size: .8rem;
+        font-size: var(--font-size-small);
     }
 
     .item,
     .opener-item {
-        font-size: 1.1rem;
+        font-size: var(--font-size-normal);
     }
 
     .group-wrapper {
@@ -478,14 +478,14 @@
 
     .legend-container li:nth-child(1n):hover::before,
     .legend-container li:nth-child(1n):focus::before {
-        font-size: .8rem;
+        font-size: var(--font-size-small);
     }
 
     .item,
     .opener-item {
-        font-size: .8rem;
+        font-size: var(--font-size-small);
         min-height: 48px;
-        padding: 4px;
+        padding: var(--padding-around-small);
     }
 
     .group-wrapper {
