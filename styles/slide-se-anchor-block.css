@@ -1,7 +1,12 @@
 /* media content configuration */
+.content-wrapper {
+    max-width: 1080px;
+}
+
 .mosaic-container {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(1, 240px);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 240px);
+    grid-auto-rows: 240px;
 }
 
 .img {
@@ -14,7 +19,6 @@
 }
 
 .img-cell-6 {
-    grid-column: span 2;
+    grid-column: span 3;
     grid-row: span 2;
-    min-height: 100%;
 }

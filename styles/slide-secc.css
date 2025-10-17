@@ -1,7 +1,8 @@
 /* media content configuration */
 @media (min-width: 816px){
-    .img-cell-3 {
-        grid-area: 2 / 1 / 3 / -1;
+    .img-cell-3,
+    .img-cell-4 {
+        grid-column: span 2;
     }
 
     .img-cell-3 > img {

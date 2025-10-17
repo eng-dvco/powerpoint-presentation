@@ -73,6 +73,9 @@
     --padding-left-icon: 8px 16px 8px 42px;
     --padding-right-icon: 8px 42px 8px 16px;
 
+    /* gaps */
+
+
     /* masks */
     --mask-fade: linear-gradient(90deg, #0000, #000 75%);
 
@@ -131,8 +134,6 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: var(--background-black-alpha-25);
-    background-blend-mode: multiply;
 }
 
 h1,
@@ -144,6 +145,10 @@ h6 {
     margin: 0;
     padding: 0;
     font-weight: var(--font-weight-bold);
+}
+
+a {
+    text-decoration: none;
 }
 
 p {
@@ -257,9 +262,10 @@ a.flex-logo-container {
         scale(1.03);
 }
 
-.img:active {
+.img:not(.unresizable):active {
+    max-height: 50dvh;
     transform:
-        scale(2);
+        scale(1.75);
     box-shadow: 0px 4px 12px 4px var(--color-black);
     z-index: 100;
 }
@@ -344,9 +350,9 @@ a.flex-logo-container {
 .content-wrapper {
     display: grid;
     width: 100%;
-    max-width: 720px;
+    max-width: 1080px;
     grid-template-rows: min-content 1fr;
-    row-gap: 12px;
+    row-gap: 24px;
     justify-items: center;
 }
 
@@ -388,45 +394,12 @@ a.flex-logo-container {
     --gap:  clamp(6px, 1.2vw, 12px);
     --h:    clamp(320px, 56vh, 480px);
 
-    position: relative;
     width: 100%;
     max-height: var(--h);
-    padding-block: 12px;
+    padding-block: var(--padding-around-general);
     background-color: var(--background-black-alpha-50);
     border-radius: var(--border-general);
     overflow: hidden;
-}
-
-.carousel-container::after {
-    content: "também é possível navegar entre as imagens com o teclado";
-    min-width: max-content;
-    position: absolute;
-    top: -10%;
-    left: 50%;
-    padding: 4px 8px;
-    border-radius: var(--border-general);
-    opacity: 0;
-    font-size: var(--font-size-small);
-    background-color: var(--background-black-alpha-50);
-    backdrop-filter: blur(4px);
-
-    transition:
-        opacity 2.5s ease .2s,
-        top .5s ease,
-        color .5s ease 8s,
-        backdrop-filter .5s ease 8s,
-        background-color .5s ease 8s;
-
-    transform:
-        translateX(-50%);
-}
-
-.carousel-container:hover::after {
-    opacity: 1;
-    top: 10%;
-    color: transparent;
-    backdrop-filter: blur(0);
-    background-color: transparent;
 }
 
 .carousel-wrapper {
@@ -535,7 +508,7 @@ a.flex-logo-container {
 .marker-group {
     display: flex;
     gap: .5rem;
-    padding: 4px 8px;
+    padding: var(--padding-general-small);
     border-radius: var(--border-general);
     background-color: var(--background-black-alpha-75);
 }
@@ -569,25 +542,25 @@ a.flex-logo-container {
 }
 
 .postscriptum-wrapper {
-    position: relative;
     max-width: 720px;
-    margin: 0px 48px;
     backdrop-filter: blur(24px);
     border-radius: var(--border-big);
-    border: 1.5px dashed white;
+    border: 1.5px dashed var(--color-white);
     background-color: var(--background-black-alpha-50);
     overflow: hidden;
 }
 
 .postscriptum-wrapper p {
     padding: var(--padding-left-icon);
-    font-weight: 500;
+    font-weight: var(--font-weight-bold);
 }
 
 .postscriptum-wrapper p::before {
+    position: absolute;
     left: clamp(2%, 10px, 4%);
     top: 50%;
     translate: 0% -50%;
+    font-size: var(--font-size-normal);
 }
 
 .post-alert {
@@ -598,8 +571,6 @@ a.flex-logo-container {
 
 .post-alert p::before {
     content: "🟡";
-    position: absolute;
-    font-size: var(--font-size-normal);
 }
 
 .post-details {
@@ -610,8 +581,6 @@ a.flex-logo-container {
 
 .post-details p::before {
     content: "🟢";
-    position: absolute;
-    font-size: var(--font-size-normal);
 }
 
 .post-critical {
@@ -622,8 +591,6 @@ a.flex-logo-container {
 
 .post-critical p::before {
     content: "🔴";
-    position: absolute;
-    font-size: var(--font-size-normal);
 }
 
 /* facultative section for notes */
@@ -720,12 +687,13 @@ a.flex-logo-container {
 
 .italic-text {
     font-style: italic;
+    font-weight: var(--font-weight-bold);
 }
 
 .invisible {
-    display: none;
+    /* display: none;
     visibility: hidden;
-    opacity: 0;
+    opacity: 0; */
 }
 
 .disabled {
@@ -749,10 +717,6 @@ a.flex-logo-container {
 
     .midr {
         width: 3.3rem;
-    }
-
-    .carousel-container::after {
-        font-size: var(--font-size-smaller);
     }
 
     .carousel-nav {
@@ -825,10 +789,6 @@ a.flex-logo-container {
 
     .slider {
         scrollbar-width: none;
-    }
-
-    .carousel-container::after {
-        display: none;
     }
 
     .carousel-nav {
