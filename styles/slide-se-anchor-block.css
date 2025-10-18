@@ -9,11 +9,6 @@
     grid-auto-rows: 240px;
 }
 
-.img {
-    height: auto;
-    width: auto;
-}
-
 .img-cell-1 {
     grid-area: 1 / 2 / 3 / 3;
 }
@@ -21,4 +16,15 @@
 .img-cell-6 {
     grid-column: span 3;
     grid-row: span 2;
+}
+
+.img-cell-9 img {
+    object-position: 0% 65%;
+}
+
+@media (min-width: 816px){
+    .img {
+        height: auto;
+        width: auto;
+    }
 }

@@ -1,4 +1,9 @@
+html {
+    height: 100vh;
+}
+
 body {
+    height: 100vh;
     background-image: url(../assets/img/hero/hero-clean_no-blur.png);
     background-attachment: fixed;
     background-position: center center;
@@ -6,6 +11,10 @@ body {
     background-size: cover;
     background-color: var(--color-black-alpha-50);
     background-blend-mode: multiply;
+}
+
+.main-container {
+    padding-bottom: 0;
 }
 
 .grid-container {
@@ -22,6 +31,7 @@ body {
     display: grid;
     align-items: center;
     max-width: 1000px;
+    height: 100%;
     margin: 156px 32px 72px 32px;
 
     grid-template: min-content max-content / 1fr max-content;

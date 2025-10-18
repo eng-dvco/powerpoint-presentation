@@ -1,8 +1,20 @@
 /* media content configuration */
+.content-wrapper {
+    max-width: 720px;
+}
+
 @media (min-width: 816px){
     .mosaic-container {
         min-width: 720px;
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 815px){
+    .img:not(.unresizable):active {
+        transform:
+            scale(1);
+        box-shadow: none;
     }
 }
 
