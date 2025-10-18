@@ -698,6 +698,7 @@ a.flex-logo-container {
         linear-gradient(180deg, #0000 0%, #000 85%);
     gap: 12px;
     font-size: var(--font-size-small);
+    pointer-events: none;
 }
 
 .personal-info {
