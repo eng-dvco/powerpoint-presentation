@@ -3,6 +3,11 @@
     max-width: 720px;
 }
 
+.mosaic-container > div {
+    background-color: var(--background-white);
+    background-clip: padding-box;
+}
+
 @media (min-width: 816px){
     .mosaic-container {
         min-width: 720px;
