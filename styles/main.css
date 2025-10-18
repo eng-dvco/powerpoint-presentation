@@ -1,9 +1,4 @@
-html {
-    height: 100vh;
-}
-
 body {
-    height: 100vh;
     background-image: url(../assets/img/hero/hero-clean_no-blur.png);
     background-attachment: fixed;
     background-position: center center;

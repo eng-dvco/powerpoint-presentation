@@ -64,14 +64,14 @@
     --border-smaller: .25rem;
 
     /* padding */
-    --padding-around-big: 20px;
-    --padding-around-general: 12px;
-    --padding-around-small: 4px;
-    --padding-general-big: 12px 16px;
-    --padding-general-normal: 8px 12px;
-    --padding-general-small: 4px 8px;
-    --padding-left-icon: 8px 16px 8px 42px;
-    --padding-right-icon: 8px 42px 8px 16px;
+    --padding-around-spacious: 1.5rem;
+    --padding-around-general: .75rem;
+    --padding-around-condensed: .25rem;
+    --padding-general-big: .75rem 1rem;
+    --padding-general-normal: .5rem .75rem;
+    --padding-general-small: .25rem .5rem;
+    --padding-left-icon: .5rem 1rem .5rem 42px;
+    --padding-right-icon: .5rem 42px .5rem 1rem;
 
     /* gaps */
     /* will be added here */
@@ -160,6 +160,7 @@ p {
 ul,
 ol {
     padding: 0;
+    list-style: none;
 }
 
 span {
@@ -176,7 +177,6 @@ hr {
     display: grid;
     grid-template-rows: min-content min-content min-content;
     min-height: 100vh;
-    padding-bottom: 48px;
 }
 
 /* header configuration */
@@ -685,20 +685,22 @@ a.flex-logo-container {
     visibility: visible;
 }
 
+footer {
+    display: block;
+    width: 100%;
+}
+
 .footer-wrapper {
     display: flex;
-    position: absolute;
-    bottom: 0;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 3.5rem;
+    padding: var(--padding-around-general);
     background-color: var(--background-black-alpha-75);
     mask-image:
         linear-gradient(180deg, #0000 0%, #000 85%);
     gap: 12px;
     font-size: var(--font-size-small);
-    pointer-events: none;
+    /* pointer-events: none; */
 }
 
 .personal-info {
@@ -843,7 +845,7 @@ a.flex-logo-container {
         font-size: var(--font-size-small);
     }
 
-    .footer-wrapper {
+    /* .footer-wrapper {
         flex-direction: column;
         justify-content: flex-end;
         height: 7.5rem;
@@ -856,5 +858,5 @@ a.flex-logo-container {
 
     .more-info {
         order: -1;
-    }
+    } */
 }
