@@ -3,7 +3,14 @@
     max-width: 720px;
 }
 
-.mosaic-container > div {
+.mosaic-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.mosaic-container > div.img {
     background-color: var(--background-white);
     background-clip: padding-box;
 }
@@ -33,16 +40,16 @@
 }
 
 /* Medium devices (tablets, 768px and below) */
-@media (max-width: 768px){
+@media (max-width: 768px){}
+
+/* Small devices (landscape phones, 576px and below) */
+@media (max-width: 576px){
     .mosaic-container {
         display: flex;
         flex-direction: column;
-        min-width: auto;
+        width: 100%;
     }
 }
-
-/* Small devices (landscape phones, 576px and below) */
-@media (max-width: 576px){}
 
 /* Small devices (portrait phones, 386px and below) */
 @media (max-width: 386px) {}

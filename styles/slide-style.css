@@ -59,9 +59,9 @@
     --font-size-multiplier-lg: 1.15;
     --font-size-multiplier-md: 1;
     --font-size-multiplier-sm: .85;
-    --font-size-multiplier-xm: .70;
-    --font-size-multiplier-xxm: .5;
-    --font-size-multiplier-xxxm: .35;
+    --font-size-multiplier-xs: .70;
+    --font-size-multiplier-xxs: .5;
+    --font-size-multiplier-xxxs: .4;
 
     --font-weight-boldest: 700;
     --font-weight-bolder: 600;
@@ -81,6 +81,7 @@
     /* padding */
     --padding-around-spacious: 1.5rem;
     --padding-around-general: .75rem;
+    --padding-button: .5rem .75rem;
     --padding-around-condensed: .25rem;
     --padding-general-big: .75rem 1rem;
     --padding-general-normal: .5rem .75rem;
@@ -134,11 +135,11 @@
 
 * {
     position: relative;
-    box-sizing: border-box;
-    color: var(--color-white);
     font-family: var(--font-family-general);
     font-weight: var(--font-weight-normal);
-    line-height: var(--font-line-normal);
+    line-height: var(--font-line-general);
+    color: var(--color-white);
+    box-sizing: border-box;
 }
 
 body {
@@ -232,18 +233,19 @@ hr {
     width: 100%;
     min-height: 64px;
     padding-inline: 12px;
+    background-color: var(--background-black-alpha-50);
     text-align: center;
     align-content: center;
-    background-color: var(--background-black-alpha-50);
 }
 
 .title-header-h3 {
     width: 100%;
-    min-height: 48px;
+    min-height: 64px;
+    grid-column: 1 / -1;
     padding-inline: 12px;
+    background: var(--background-black-alpha-50);
     text-align: center;
     align-content: center;
-    background: var(--background-black-alpha-50);
 }
 
 a.flex-logo-container {
@@ -288,6 +290,7 @@ a.flex-logo-container {
     transform:
         scale(1.75);
     box-shadow: 0px 4px 12px 4px var(--color-black);
+    cursor: zoom-out;
     z-index: 100;
 }
 
@@ -307,7 +310,7 @@ a.flex-logo-container {
     height: fit-content;
     justify-content: center;
     padding: 4px 24px;
-    font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxm));
+    font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxs));
     background-color: var(--background-black-alpha-50);
     z-index: 1000;
 }
@@ -320,11 +323,11 @@ a.flex-logo-container {
 }
 
 .crumb {
-    line-height: 1;
+    line-height: var(--font-line-ui);
 }
 
 .crumb a {
-    font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxm));
+    font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxs));
     font-weight: var(--font-weight-bolder);
     font-style: italic;
     text-decoration: none;
@@ -382,16 +385,10 @@ a.flex-logo-container {
     justify-items: center;
 }
 
-.content-wrapper > .title-header-h2 {
+.content-wrapper .title-header-h2,
+.content-wrapper .title-header-h3 {
     border-radius: var(--border-general);
     padding: 12px;
-}
-
-.mosaic-container {
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
 }
 
 .obs {
@@ -407,7 +404,7 @@ a.flex-logo-container {
     backdrop-filter: blur(4px);
     pointer-events: none;
     
-    font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxm));
+    font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxs));
     font-weight: var(--font-weight-bold);
     text-align: center;
     color: var(--color-white);
@@ -487,7 +484,7 @@ a.flex-logo-container {
     border-radius: var(--border-round);
     background-color: var(--background-black-alpha-50);
 
-    font-size: calc(var(--font-size-icon)*var(--font-size-multiplier-xxm));
+    font-size: calc(var(--font-size-icon)*var(--font-size-multiplier-xxs));
     font-weight: var(--font-weight-boldest);
     text-decoration: none;
 
@@ -568,7 +565,7 @@ a.flex-logo-container {
 
 .postscriptum-wrapper {
     max-width: 720px;
-    margin-block: 24px;
+    margin: 24px;
     margin-bottom: 48px;
     border: 1.5px dashed var(--color-white);
     border-radius: var(--border-big);
@@ -579,7 +576,7 @@ a.flex-logo-container {
 
 .postscriptum-wrapper p {
     padding: var(--padding-left-icon);
-    font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xm));
+    font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xs));
     font-weight: var(--font-weight-bold);
 }
 
@@ -588,7 +585,7 @@ a.flex-logo-container {
     left: clamp(2%, 10px, 4%);
     top: 50%;
     translate: 0% -50%;
-    font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxm));
+    font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxs));
 }
 
 .post-alert {
@@ -644,7 +641,7 @@ a.flex-logo-container {
 }
 
 .notes-list p {
-    font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxm));
+    font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxs));
 }
 
 .note-item {
@@ -696,7 +693,7 @@ a.flex-logo-container {
     transform: translateX(-50%);
     background-color: var(--background-black);
 
-    font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxm));
+    font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xs));
     box-shadow: 0px 4px 12px .5px var(--color-black);
     text-align: justify;
     visibility: hidden;
@@ -728,7 +725,7 @@ footer {
     background-color: var(--background-black-alpha-75);
     mask-image:
         linear-gradient(180deg, #0000 0%, #000 85%);
-    font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxm));
+    font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxs));
 }
 
 .personal-info {
@@ -748,7 +745,7 @@ footer {
 
 .footer-wrapper p,
 .footer-wrapper a {
-    font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxm));;
+    font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxs));;
     font-weight: var(--font-weight-bold);
     color: var(--color-white);
 }
@@ -811,10 +808,6 @@ footer {
     .midr {
         width: 3.3rem;
     }
-
-    .postscriptum-container {
-        margin-inline: 48px;
-    }
     
     .carousel-nav {
         display: none;
@@ -822,7 +815,7 @@ footer {
 
     .tip:hover::before,
     .tip:focus::before {
-        font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxm));
+        font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxs));
     }
 
     .slider {
@@ -833,48 +826,48 @@ footer {
 /* Medium devices (tablets, 768px and below) */
 @media (max-width: 768px) {
     h1 {
-        font-size: calc(var(--font-size-h1)*var(--font-size-multiplier-xm));
+        font-size: calc(var(--font-size-h1)*var(--font-size-multiplier-xs));
     }
     h2 {
-        font-size: calc(var(--font-size-h2)*var(--font-size-multiplier-xm));
+        font-size: calc(var(--font-size-h2)*var(--font-size-multiplier-xs));
     }
     h3 {
-        font-size: calc(var(--font-size-h3)*var(--font-size-multiplier-xm));
+        font-size: calc(var(--font-size-h3)*var(--font-size-multiplier-xs));
     }
     h4 {
-        font-size: calc(var(--font-size-h4)*var(--font-size-multiplier-xm));
+        font-size: calc(var(--font-size-h4)*var(--font-size-multiplier-xs));
     }
     h5 {
-        font-size: calc(var(--font-size-h5)*var(--font-size-multiplier-xm));
+        font-size: calc(var(--font-size-h5)*var(--font-size-multiplier-xs));
     }
     h6 {
-        font-size: calc(var(--font-size-h6)*var(--font-size-multiplier-xm));
+        font-size: calc(var(--font-size-h6)*var(--font-size-multiplier-xs));
     }
 
     .obs {
-        font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxm));
+        font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxs));
     }
 }
 
 /* Small devices (landscape phones, 576px and below) */
 @media (max-width: 576px) {
     h1 {
-        font-size: calc(var(--font-size-h1)*var(--font-size-multiplier-xxm));
+        font-size: calc(var(--font-size-h1)*var(--font-size-multiplier-xxs));
     }
     h2 {
-        font-size: calc(var(--font-size-h2)*var(--font-size-multiplier-xxm));
+        font-size: calc(var(--font-size-h2)*var(--font-size-multiplier-xxs));
     }
     h3 {
-        font-size: calc(var(--font-size-h3)*var(--font-size-multiplier-xxm));
+        font-size: calc(var(--font-size-h3)*var(--font-size-multiplier-xxs));
     }
     h4 {
-        font-size: calc(var(--font-size-h4)*var(--font-size-multiplier-xxm));
+        font-size: calc(var(--font-size-h4)*var(--font-size-multiplier-xxs));
     }
     h5 {
-        font-size: calc(var(--font-size-h5)*var(--font-size-multiplier-xxm));
+        font-size: calc(var(--font-size-h5)*var(--font-size-multiplier-xxs));
     }
     h6 {
-        font-size: calc(var(--font-size-h6)*var(--font-size-multiplier-xxm));
+        font-size: calc(var(--font-size-h6)*var(--font-size-multiplier-xxs));
     }
 
     .cmt {
@@ -886,7 +879,7 @@ footer {
     }
 
     .postscriptum-container p {
-        font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxm));
+        font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxs));
     }
 
     .main-container {
@@ -898,13 +891,11 @@ footer {
         height: 96px;
         width: 100%;
     }
-
-    .mosaic-container {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
 }
 
 /* Small devices (portrait phones, 386px and below) */
-@media (max-width: 386px) {}
+@media (max-width: 386px) {
+    .tip:hover::before {
+        font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxxs));
+    }
+}
