@@ -36,6 +36,11 @@
     --color-purple-alpha-50: rgba(100, 80, 255, .50);
     --color-purple-alpha-25: rgba(100, 80, 255, .25);
     --color-purple-alpha-10: rgba(100, 80, 255, .10);
+    --color-orange: rgba(255, 185, 80, 1);
+    --color-orange-alpha-75: rgba(255, 185, 80, .75);
+    --color-orange-alpha-50: rgba(255, 185, 80, .50);
+    --color-orange-alpha-25: rgba(255, 185, 80, .25);
+    --color-orange-alpha-10: rgba(255, 185, 80, .10);
 
     /* fonts */
     --font-family-general: "Roboto Mono", monospace;
@@ -131,6 +136,11 @@
     --background-purple-alpha-50: rgba(100, 80, 255, .50);
     --background-purple-alpha-25: rgba(100, 80, 255, .25);
     --background-purple-alpha-10: rgba(100, 80, 255, .10);
+    --background-orange: rgba(255, 185, 80, 1);
+    --background-orange-alpha-75: rgba(255, 185, 80, .75);
+    --background-orange-alpha-50: rgba(255, 185, 80, .50);
+    --background-orange-alpha-25: rgba(255, 185, 80, .25);
+    --background-orange-alpha-10: rgba(255, 185, 80, .10);
 }
 
 * {
@@ -234,6 +244,7 @@ hr {
     min-height: 64px;
     padding-inline: 12px;
     background-color: var(--background-black-alpha-50);
+    backdrop-filter: blur(4px);
     text-align: center;
     align-content: center;
     object-position: 0% 0%;
@@ -245,6 +256,7 @@ hr {
     grid-column: 1 / -1;
     padding-inline: 12px;
     background: var(--background-black-alpha-50);
+    backdrop-filter: blur(4px);
     text-align: center;
     align-content: center;
 }
