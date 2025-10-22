@@ -296,7 +296,7 @@
 
 .section-miscellaneous {
     grid-column: span 2;
-    background-image: url("../assets/img/banner/panel-1.jpg");
+    background-image: url("../assets/img/banner/panel-1.JPG");
 
     transition:
         background-color 500ms ease;
