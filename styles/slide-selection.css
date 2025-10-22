@@ -14,9 +14,12 @@
 }
 
 .title-header-h2 {
-    /* grid-area: 1 / -1; */
     min-width: max-content;
-    /* background-color: red; */
+}
+
+.content-wrapper .title-header-h2,
+.content-wrapper .title-header-h3 {
+    border-radius: 0;
 }
 
 .legend-container {
@@ -199,8 +202,17 @@
     min-width: min-content;
     max-width: 1080px;
     border-radius: var(--border-general);
-    background-color: var(--color-black-alpha-50);
     overflow: hidden;
+    background-blend-mode: saturation;
+    background-color: var(--color-black-alpha-75);
+    background-size: cover;
+}
+
+.section:not(.section-legend):hover,
+.section:not(.section-legend):focus,
+.additional-group:hover,
+.additional-group:focus {
+    background-color: var(--color-black-alpha-50);
 }
 
 .column {
@@ -217,6 +229,10 @@
 .section-substation {
     grid-column: span 3;
     grid-row: span 2;
+    background-image: url("../assets/img/banner/se-view-1.jpg");
+
+    transition:
+        background-color 500ms ease;
 }
 
 .section-substation .column-1 {
@@ -225,14 +241,27 @@
 
 .section-transmission {
     grid-row: span 1;
+    background-image: url("../assets/img/banner/lt-view-1.jpg");
+
+    transition:
+        background-color 500ms ease;
 }
 
 .section-distribution {
     grid-row: span 1;
+    background-image: url("../assets/img/banner/ld-view-1.jpg");
+
+    transition:
+        background-color 500ms ease;
 }
 
 .section-administration {
     grid-column: span 4;
+    background-image: url("../assets/img/banner/se-view-3.jpg");
+    background-position: center 75%;
+
+    transition:
+        background-color 500ms ease;
 }
 
 .section-administration .column-4 {
@@ -241,18 +270,36 @@
 
 .section-documents {
     grid-column: span 2;
+    background-image: url("../assets/img/banner/documents.png");
+    background-position: 0% 30%;
+
+    transition:
+        background-color 500ms ease;
 }
 
 .section-obstacles {
     grid-column: span 2;
+    background-image: url("../assets/img/banner/lt-view-2.JPG");
+    background-position: 0% center;
+
+    transition:
+        background-color 500ms ease;
 }
 
 .section-playable {
     grid-column: span 2;
+    background-image: url("../assets/img/banner/ld-view-2.JPG");
+
+    transition:
+        background-color 500ms ease;
 }
 
 .section-miscellaneous {
     grid-column: span 2;
+    background-image: url("../assets/img/banner/panel-1.jpg");
+
+    transition:
+        background-color 500ms ease;
 }
 
 .additional-group {
@@ -263,8 +310,15 @@
     flex-direction: column;
     border-radius: var(--border-general);
 
-    background-color: var(--color-black-alpha-50);
+    background-image: url("../assets/img/banner/se-view-2.jpg");
+    background-position: center center;
+    background-blend-mode: saturation;
+    background-color: var(--color-black-alpha-75);
+    background-size: cover;
     overflow: hidden;
+
+    transition:
+        background-color 500ms ease;
 }
 
 .group-wrapper {
@@ -423,7 +477,7 @@
         width: 100%;
         flex-direction: column;
     }
-
+    
     .legend-container li {
         font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xs));
     }
@@ -466,7 +520,7 @@
     .legend-container li {
         font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxs));
     }
-
+    
     .legend-container li:nth-child(1n):hover::before,
     .legend-container li:nth-child(1n):focus::before {
         font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxs));
@@ -484,4 +538,12 @@
 }
 
 /* Small devices (portrait phones, 386px and below) */
-@media (max-width: 386px) {}
+@media (max-width: 386px) {
+    .legend-container {
+        flex-direction: column;
+    }
+
+    .legend-container li:nth-child(1n)::before {
+        text-align: left;
+    }
+}
