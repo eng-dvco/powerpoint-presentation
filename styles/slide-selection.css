@@ -241,7 +241,7 @@
 
 .section-transmission {
     grid-row: span 1;
-    background-image: url("../assets/img/banner/lt-view-1.jpg");
+    background-image: url("../assets/img/banner/lt-view-1.JPG");
 
     transition:
         background-color 500ms ease;
@@ -249,7 +249,7 @@
 
 .section-distribution {
     grid-row: span 1;
-    background-image: url("../assets/img/banner/ld-view-1.jpg");
+    background-image: url("../assets/img/banner/ld-view-1.JPG");
 
     transition:
         background-color 500ms ease;
