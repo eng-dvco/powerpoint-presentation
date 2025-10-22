@@ -15,6 +15,11 @@
 
 .title-header-h2 {
     min-width: max-content;
+    backdrop-filter: blur(4px);
+}
+
+.title-header-h3 {
+    backdrop-filter: blur(4px);
 }
 
 .content-wrapper .title-header-h2,
@@ -553,7 +558,7 @@
     .legend-container li {
         font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxs));
     }
-    
+
     .legend-container li:nth-child(1n):hover::before,
     .legend-container li:nth-child(1n):focus::before {
         font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxs));
