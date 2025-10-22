@@ -907,6 +907,6 @@ footer {
 /* Small devices (portrait phones, 386px and below) */
 @media (max-width: 386px) {
     .tip:hover::before {
-        font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxxs));
+        font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxs));
     }
 }
