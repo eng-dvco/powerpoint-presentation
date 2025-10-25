@@ -1,0 +1,25 @@
+/* media content configuration */
+.content-wrapper {
+    max-width: 1080px;
+}
+
+.mosaic-container {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.img {
+    height: auto;
+}
+
+.img-cell-1 {
+    grid-column: span 2;
+}
+
+.img-cell-2 {
+    grid-column: span 2;
+}
+
+.img-cell-3 {
+    grid-column: span 4;
+    grid-row: span 2;
+}

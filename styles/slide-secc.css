@@ -1,4 +1,17 @@
 /* media content configuration */
+.content-wrapper {
+    max-width: 960px;
+}
+
+.img-cell-7 {
+    height: auto;
+}
+
+.img-cell-7 {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
 @media (min-width: 816px){
     .img-cell-3,
     .img-cell-4 {

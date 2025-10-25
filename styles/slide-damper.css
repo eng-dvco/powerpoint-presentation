@@ -1,0 +1,12 @@
+/* media content configuration */
+.img-cell-1 img {
+    object-position: 45% 0%;
+}
+
+.img-cell-3 {
+    grid-column: span 2;
+}
+
+.img-cell-3 img {
+    object-position: 0% 75%;
+}

@@ -1,0 +1,4 @@
+/* media content configuration */
+.img-cell-3 {
+    grid-column: span 2;
+}
