@@ -27,6 +27,17 @@
     border-radius: 0;
 }
 
+.update-info {
+    padding: 4px 0 4px 24px;
+    background-color: var(--background-white-alpha-10);
+    font-size: calc(var(--font-size-content)*var(--font-size-multiplier-xxxs));
+    font-style: italic;
+}
+
+.update-info > p {
+    color: var(--color-white-alpha-75);
+}
+
 .legend-container {
     display: flex;
     flex-wrap: wrap;
@@ -310,7 +321,6 @@
 }
 
 .section-obstacles {
-    /* grid-column: span 1; */
     background-image: url("../assets/img/banner/se-view-3.jpg");
     background-position: 0% center;
 
@@ -327,7 +337,6 @@
 }
 
 .section-miscellaneous {
-    /* grid-column: span 1; */
     background-image: url("../assets/img/banner/panel-1.jpg");
 
     transition:
