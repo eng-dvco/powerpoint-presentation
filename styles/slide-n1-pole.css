@@ -1,0 +1,26 @@
+/* media content configuration */
+.content-wrapper {
+    max-width: 1080px;
+}
+
+.mosaic-container {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.img > img {
+    object-position: center center;
+}
+
+/* X-Large devices (large desktops, 1200px and below) */
+@media (max-width: 1400px){
+    .img:not(.unresizable),
+    .img:not(.unresizable):active {
+        cursor: default;
+    }
+
+    .img:not(.unresizable):active {
+        transform:
+            scale(1);
+        box-shadow: none;
+    }
+}

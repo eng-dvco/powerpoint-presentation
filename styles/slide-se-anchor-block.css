@@ -49,6 +49,11 @@
     object-fit: contain;
 }
 
+.img-cell-15 {
+    grid-column: span 3;
+    grid-row: span 2;
+}
+
 /* XX-Large devices (larger desktops, 1400px and below) */
 @media (max-width: 1400px){}
 
@@ -64,6 +69,13 @@
 
     .img {
         grid-area: auto;
+        max-height: 240px;
+    }
+
+    .img-cell-15 {
+        grid-column: span 2;
+        grid-row: span 2;
+        max-height: 100%;
     }
 }
 
