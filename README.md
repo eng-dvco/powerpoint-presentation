@@ -16,7 +16,7 @@ Não há build. As páginas usam `fetch` e caminhos relativos, portanto **precis
 
 ## Publicação
 
-A versão online é servida pelo **GitHub Pages** a partir do branch `main`: <https://eng-dvco.github.io/presentation/apresentação.html>. Todo push publica; a página **Histórico de Modificações** (`slides/history.html`) é reconstruída a partir do log do git (`history/history-indefinida.json`) e deve ser regenerada e commitada antes de cada publicação.
+A versão online é servida pelo **GitHub Pages** a partir do branch `main`: <https://eng-dvco.github.io/presentation/apresentação.html>. Todo push publica; ao fim de cada deploy, o workflow **Post-deploy QA** (`.github/workflows/post-deploy-qa.yml`) confere se toda referência de HTML/CSS/histórico resolve no site publicado e, no repositório, se cada imagem de slide tem ao menos uma variante WebP. A página **Histórico de Modificações** (`slides/history.html`) é reconstruída a partir do log do git (`history/history-indefinida.json`) e deve ser regenerada e commitada antes de cada publicação.
 
 ## Estrutura
 
@@ -24,15 +24,16 @@ A versão online é servida pelo **GitHub Pages** a partir do branch `main`: <ht
 presentation/
 ├── apresentação.html         # porta de entrada (landing)
 ├── abrir-apresentação.bat    # execução local (servidor embutido + navegador)
-├── slides/                   # index.html (grade de conteúdo) + slide-*.html + moldes (*-template.html)
+├── slides/                   # index.html (grade de conteúdo) + slide-*.html
 ├── styles/                   # CSS — tokens em variables.css (carregado primeiro)
 ├── scripts/                  # JS — navegação, lightbox, cronogramas, histórico
 ├── assets/                   # imagens, ícones, logos, fontes e mídias
 ├── history/                  # dados e miniaturas do Histórico de Modificações
-└── public/                   # definitions/ (glossário) e snapshots/ (cópias congeladas, imutáveis)
+├── public/                   # definitions/ (glossário) e snapshots/ (cópias congeladas, imutáveis)
+└── ci/                       # verificações pós-deploy executadas pelo GitHub Actions
 ```
 
-Duas pastas de apoio existem apenas em disco e **não são versionadas**: `tools/` (otimização de imagens, geração do histórico e verificações) e `.documents/` (arquivo-fonte dos documentos listados em "documentos recebidos").
+Alguns apoios existem apenas em disco e **não são versionados**: `tools/` (otimização de imagens, geração do histórico e verificações), `.documents/` (arquivo-fonte dos documentos listados em "documentos recebidos"), os moldes `*-template.*`, os manifestos `descrição*.txt` e `assets/media/`.
 
 ## Princípios
 

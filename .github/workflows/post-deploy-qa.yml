@@ -1,0 +1,26 @@
+name: Post-deploy QA
+
+on:
+  page_build:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: post-deploy-qa
+  cancel-in-progress: true
+
+jobs:
+  qa:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.build.status == 'built' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Live assets resolve
+        run: node ci/live-assets.js
+      - name: WebP variant ladder
+        run: node ci/check-variants.js
