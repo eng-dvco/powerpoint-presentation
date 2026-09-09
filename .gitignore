@@ -1,5 +1,6 @@
 .documents
 **/*template.*
 **/descrição.txt
+**/descrição-*.txt
 /assets/media
 /tools

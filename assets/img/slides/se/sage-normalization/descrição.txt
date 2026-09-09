@@ -1,8 +1,0 @@
-Equipamento: SPCS
-Tags: MSO1-N3
-
-- Adicionado informações de tensão e corrente para MB02.
-- Adicionado informações de tensão da saída dos transformadores 6TR1, 6TR2 e TRRD.
-- Adicionado informações de potência ativa, reativa e aparente dos transformadores 6TR1 e 6TR2. 
-- Adicionado as informações de frequência de 6TR1, MB01 e MB02.
-- Corrigido as informações de corrente para MB01.

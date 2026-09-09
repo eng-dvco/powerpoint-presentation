@@ -1,3 +1,0 @@
-uav-1: Captura termográfica da estrutura completa.
-
-uav-2, uav-3, uav-4, uav-5, uav-6: Inspeção de elementos da linha de transmissão com uso de veículo aéreo não tripulado (VANT) de alta resolução e sensor termográfico.
