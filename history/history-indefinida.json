@@ -1,9 +1,45 @@
 {
  "apresentacao": "indefinida",
- "geradoEm": "09-09-26",
- "commits": 259,
- "total": 524,
+ "geradoEm": "10-09-26",
+ "commits": 261,
+ "total": 525,
  "registros": [
+  {
+   "id": "df5067f-0",
+   "data": "10-09-26",
+   "hora": "14:35",
+   "commit": "df5067f",
+   "aba": "conteudo",
+   "link": "slides/slide-maintenance-signaling.html",
+   "acao": "adição",
+   "tipo": "slide",
+   "titulo": "Sinalização no entorno da torre e da via",
+   "breadcrumb": [
+    "ST — Segurança do Trabalho",
+    "Sinalização no entorno da execução corretiva das torres"
+   ],
+   "resumo": "Sinalização instalada · Vista aérea com uso de drone",
+   "imagens": {
+    "total": 2,
+    "pesoTotal": "9,4 MB",
+    "amostra": [
+     {
+      "nome": "signal-1.jpeg",
+      "src": "assets/img/slides/st/maintenance-signaling/signal-1.jpeg",
+      "miniatura": "assets/img/slides/st/maintenance-signaling/signal-1-200.webp",
+      "peso": "4,7 MB"
+     },
+     {
+      "nome": "signal-2.jpeg",
+      "src": "assets/img/slides/st/maintenance-signaling/signal-2.jpeg",
+      "miniatura": "assets/img/slides/st/maintenance-signaling/signal-2-200.webp",
+      "peso": "4,7 MB"
+     }
+    ],
+    "extras": 0
+   },
+   "qtdImagens": 2
+  },
   {
    "id": "52bc0b7-0",
    "data": "31-08-26",
